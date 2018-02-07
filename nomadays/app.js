@@ -7,11 +7,16 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const expressSession = require('express-session');
 const passport = require('passport');
+const mongoose = require('mongoose');
 
 const index = require('./routes/index');
 const users = require('./routes/users');
 
+
 const app = express();
+
+// Connection to database
+mongoose.connect('mongodb://localhost/nomadays');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

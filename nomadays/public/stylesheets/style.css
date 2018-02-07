@@ -1,8 +1,291 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+*{
+  /* margin:10px; */
+  /* padding: 10px; */
 }
 
-a {
-  color: #00B7FF;
+padre{
+  display:flex;
+  flex-flow: column nowrap;
 }
+
+  .header{
+      
+      background: url("img/background-login.jpg");
+      background-position: center;
+      background-attachment: contain;
+      background-size: cover;
+      display:flex;
+      flex-flow: column nowrap;
+  
+  }
+      .menu{
+          /* background: rgba(0, 0, 0, 0.2); */
+          display: flex;
+          flex-flow: row nowrap;
+          height: 100px;
+          align-items: center;
+      }
+          .logo{
+             
+              flex: 1 1 auto;
+              display: flex;
+              align-self: center; 
+          }
+
+              .logo img{
+                  
+                  height: 50px;
+                  margin:10px 0 20px 70px;
+              }
+          
+          .descarga{
+              /* flex: 1 1 auto; */
+              display:flex;
+              align-self: center;
+              margin-top:10px; 
+          }
+              .descarga a {
+                  margin:120px;
+                  color:#fff;
+      
+              }
+
+              .descarga a:hover{
+                  text-decoration: none;
+                  color:rgba(158, 84, 226, 0.8);
+              }
+              
+          .hamburguesa{
+              /* flex: 1 1 auto; */
+              display: flex;
+              align-self: center; 
+          }
+              .hamburguesa img{
+                  height: 20px;
+                  margin-right: 70px;
+              }
+
+              .hamburguesa img:hover{
+                  
+              }
+      .frase-principal{
+          /* background: rgba(175, 238, 238, 0.3); */
+          margin-top: 80px;
+          display: flex;
+          flex-flow: column nowrap;
+          align-items: center;
+      }
+          h1{
+              
+              color: #fff;
+              text-transform: uppercase;
+              width: 450px;
+              text-align: center; 
+              font-size: 32px;  
+              letter-spacing: 2px;
+          }
+
+          h1 span{
+              font-size: 57px;
+              letter-spacing: 8px;
+              /* background: #000 */
+             
+          }
+          .usuario{
+              background: rgba(255, 255, 255, 0.8);
+              width: 300px;
+              height: 32px;
+              border-radius: 20px;
+              margin-top: 30px;
+              display: flex;
+              flex-flow: row nowrap;
+              justify-content: center;
+              align-items: center;
+              
+          }
+              .usuario span{
+                  display: flex;
+                  font-size: 16px;
+                  color: rgba(80, 80, 80, 0.7);
+                  height: 25px;
+              }
+          .contraseña{
+              background: rgba(255, 255, 255, 0.8);
+              width: 300px;
+              height: 32px;
+              border-radius: 20px;
+              margin-top: 20px;
+              display: flex;
+              flex-flow: row nowrap;
+              justify-content: center;
+              align-items: center;
+          }
+
+          .contraseña span{
+              display: flex;
+              font-size: 16px;
+              color: rgba(80, 80, 80, 0.7);
+              height: 25px; 
+          }
+
+
+          .remember{
+              display: flex;
+              flex-flow: column nowrap;
+          }
+
+          .recordar{
+              /* background: mediumslateblue; */
+              margin-top: 10px;
+              color: #fff;
+              font-size: 14px;
+              display: flex;
+              flex-flow: row nowrap;
+              align-self: center;
+             
+          }
+
+          .recordar .square{
+              width: 15px;
+              height: 15px;
+              border: #fff solid 1.5px;
+              margin-right: 10px;
+              display: flex;
+              align-self: center;
+              background: none;
+          }
+
+          .square:hover{
+              /* background: rgba(19, 19, 19, 0.7); */
+              border: rgba(133, 64, 197, 0.8) solid 1.5px;
+          }
+
+          .recordar p{
+              display: flex;
+              flex-flow: row nowrap;
+              align-items: center;
+              margin-top: 15px;
+          }
+          .olvidaste{
+              /* background: mediumslateblue; */
+              height: 30px;
+          }
+              .olvidaste p{
+                  display: flex;
+                  flex-flow: column;
+                  align-items: center;
+                  color: #fff;
+                  font-size: 14px;
+              }
+      
+
+          .enter {
+              margin-top: 10px;
+              width: 100px;
+              height: 35px;
+              border-radius: 4px;
+              background: rgba(32, 32, 32, 0.7);
+              border-style: none;
+              margin-bottom: 20px;
+          }
+
+              .enter p{
+                  margin-top: 8px;
+                  color: #fff;
+                  text-transform: uppercase;
+                  font-size: 12px;
+              }
+          .enter:hover{
+              background: rgba(133, 64, 197, 0.8);
+          }
+
+          .registrarse{
+              
+              font-size: 14px;
+              display: flex;
+              flex-flow: row nowrap;
+              align-self: center;
+              color:#fff;
+              margin-bottom: 100px;
+          }
+
+          .registrarse a{
+              margin-left: 10px;
+              color: #fff;
+          }
+
+          .registrarse a:hover{
+             text-decoration: none;
+             color:rgba(133, 64, 197, 0.8);
+             font-weight: bold;
+          }
+
+
+  .footer{
+      background:rgba(32, 32, 32, 1);
+      display: flex;
+      flex-flow: row nowrap;
+      height: 200px;
+      align-items: center;
+  }
+      .info {
+          /* background: mediumslateblue; */
+          flex: 1 1 auto;
+          height: 60px;
+          margin: 0 0 30px 70px;
+          display: flex;
+          flex-flow: column;
+      }
+          .info a{
+              color: #fff;
+              font-weight: lighter;
+              font-size: 14px;
+              margin-top: 10px;
+          }
+
+          .info a:hover{
+              color:rgba(167, 104, 226, 1);
+              text-decoration: none;
+          }
+      .rrss{
+          flex: 1 1 auto;
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: flex-end;
+          margin-top: 20px;
+          margin-right: 70px;
+          justify-content: space-around;
+          width: 10px;
+          height: 100px;
+      }
+         .ig img{
+             height: 30px;
+             margin: 20px;
+             margin-top: 60px;
+             
+          }
+
+          .pn img{
+              height: 30px;
+              margin: 20px;
+              }
+          .fb img{
+              height: 30px;
+              margin: 20px;
+              }
+
+      .terminos{
+          
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: flex-end;
+          color:#fff;
+          font-weight: lighter;
+          font-size: 14px;
+          flex: 1 1 auto;
+          height: 95px;
+      }
+          .terminos p{
+              display: flex;
+              margin:0 0 0 30px;
+          }
