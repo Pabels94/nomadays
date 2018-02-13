@@ -38,7 +38,7 @@ app.use(expressSession({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/', index);
+
 app.use('/', auth);
 
 // catch 404 and forward to error handler
