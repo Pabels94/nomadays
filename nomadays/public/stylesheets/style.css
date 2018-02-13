@@ -90,7 +90,7 @@ padre{
               font-size: 57px;
               letter-spacing: 6px;
               font-weight: 500;
-              /* background: #000 */
+              
              
           }
           .usuario{
@@ -208,7 +208,7 @@ padre{
               flex-flow: row nowrap;
               align-self: center;
               color:#fff;
-              margin-bottom: 60px;
+              margin-bottom: 90px;
           }
 
           .registrarse a{
@@ -226,72 +226,74 @@ padre{
 
 
   .footer{
-      background:rgba(32, 32, 32, 1);
-      display: flex;
-      flex-flow: row nowrap;
-      height: 150px;
-      align-items: center;
-  }
-      .info {
-          /* background: mediumslateblue; */
-          
-          height: 60px;
-          margin: 0 0 30px 70px;
-          display: flex;
-          flex-flow: column;
-          padding-right: 200px;
-      }
-          .info a{
-              color: #fff;
-              font-weight: lighter;
-              font-size: 14px;
-              margin-top: 10px;
-          }
+        background:rgba(32, 32, 32, 1);
+        display: flex;
+        flex-flow: row nowrap;
+        height: 100px;
+        align-items: center;
+    }
+        .info {
+            /* background: mediumslateblue; */
+            /* flex: 1 1 auto; */
+            height: 100px;
+            display: flex;
+            flex-flow: row;
+            padding-left:50px;
+        }
+            .info a{
+                display: flex;
+                align-items: center;
+                color: #fff;
+                font-weight: lighter;
+                font-size: 14px;
+                /* margin-top: 10px; */
+                margin-right: 20px;
+            }
 
-          .info a:hover{
-              color:rgba(167, 104, 226, 1);
-              text-decoration: none;
-          }
-      .rrss{
-          flex: 1 1 auto;
-          display: flex;
-          flex-flow: row nowrap;
-          align-items: flex-end;
-          margin-top: 20px;
-          margin-right: 70px;
-          justify-content: space-around;
-          width: 10px;
-          height: 100px;
-      }
-         .ig img{
-             height: 30px;
-             margin: 20px;
-             margin-top: 60px;
-             
-          }
+            .info a:hover{
+                color:rgba(167, 104, 226, 1);
+                text-decoration: none;
+            }
 
-          .pn img{
-              height: 30px;
-              margin: 20px;
-              }
-          .fb img{
-              height: 30px;
-              margin: 20px;
-              }
+            .terminos{
 
-      .terminos{
-          
-          display: flex;
-          flex-flow: row nowrap;
-          align-items: flex-end;
-          justify-content: center;
-          color:#fff;
-          font-weight: lighter;
-          font-size: 14px;
-          flex: 1 1 auto;
-          height: 95px;
-      }
-          .terminos p{
-              display: flex;
-              margin:0 0 13px 30px;
-          }
+                display: flex;
+                flex-flow: row nowrap;
+                flex: 1 1 auto;
+                align-items: center;
+                justify-content: center;
+                color:#fff;
+                font-weight: lighter;
+                font-size: 14px;
+                flex: 1 1 auto;
+                height: 95px;
+            }
+                .terminos p{
+                    display: flex;
+                    margin: 0;
+
+                }
+
+        .rrss{
+            flex: 1 1 auto;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            margin-right: 70px;
+            justify-content: space-around;
+            width: 10px;
+
+        }
+           .ig img{
+               height: 30px;
+               margin: 10px;
+            }
+
+            .pn img{
+                height: 30px;
+                margin: 10px;
+                }
+            .fb img{
+                height: 30px;
+                margin: 10px;
+                }

@@ -1,6 +1,8 @@
 *{
-    font-family: Helvetica, sans-serif;
-}
+    text-decoration: none;
+    font-family: Avenir, sans-serif;
+    letter-spacing: 1.5px;
+  }
 
 a {
     text-decoration: none;
@@ -79,21 +81,24 @@ padre{
             flex-flow: column nowrap;
             align-items: center;
         }
-            h1{
+        h1{
+              
+            color: #fff;
+            text-transform: uppercase;
+            width: 650px;
+            text-align: center; 
+            font-weight: lighter;
+            font-size: 31px;  
+            letter-spacing: 2px;
+        }
 
-                color: #fff;
-                text-transform: uppercase;
-                width: 550px;
-                text-align: center;
-                font-size: 32px;
-                letter-spacing: 2px;
-                font-weight: bold;
-            }
-
-            h1 span{
-                font-size: 32px;
-                letter-spacing: 8px;
-            }
+        h1 span{
+            font-size: 42px;
+            
+            font-weight: 500;
+            
+           
+        }
             .name{
                 background: rgba(255, 255, 255, 0.8);
                 width: 300px;
@@ -159,6 +164,7 @@ padre{
                 justify-content: center;
                 align-items: center;
 
+
             }
                 .confirm span{
                     display: flex;
@@ -173,7 +179,7 @@ padre{
                 border-radius: 4px;
                 background: rgba(32, 32, 32, 0.7);
                 border-style: none;
-                margin-bottom: 130px;
+                margin-bottom: 70px;
             }
 
                 .enter p{
@@ -231,7 +237,8 @@ padre{
             }
                 .terminos p{
                     display: flex;
-                    margin-bottom: 0;
+                    margin: 0;
+
 
                 }
 

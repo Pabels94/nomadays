@@ -9,6 +9,9 @@ router.get('/login', (req, res, next) => {
   res.render('auth/login');
 });
 
+router.get('/home', (req, res, next) => {
+  res.render('auth/home');
+});
 
 router.get('/register', (req, res, next) => {
   res.render('auth/register');
