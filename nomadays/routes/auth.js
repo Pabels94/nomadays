@@ -5,12 +5,16 @@ const bcrypt = require('bcrypt');
 const bcryptSalt = 10;
 
 
-router.get('/', (req, res, next) => {
+router.get('/login', (req, res, next) => {
   res.render('auth/login');
 });
 
 
+<<<<<<< HEAD
 router.get('/signup', (req, res, next) => {
+=======
+router.get('/register', (req, res, next) => {
+>>>>>>> 6e82006eef048735ff5dffc93c140662624e8789
   res.render('auth/register');
 });
 
