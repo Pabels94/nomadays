@@ -4,8 +4,14 @@ const User = require('../models/user');
 const bcrypt = require('bcrypt');
 const bcryptSalt = 10;
 
-router.get('/signup', (req, res, next) => {
-  res.render('auth/signup');
+
+router.get('/login', (req, res, next) => {
+  res.render('auth/login');
+});
+
+
+router.get('/register', (req, res, next) => {
+  res.render('auth/register');
 });
 
 router.post('/signup', (req, res, next) => {
@@ -45,9 +51,7 @@ router.post('/signup', (req, res, next) => {
 });
 
 
-router.get('/login', (req, res, next) => {
-  res.render('auth/login');
-});
+
 
 
 module.exports = router;
