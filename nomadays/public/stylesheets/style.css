@@ -17,7 +17,6 @@ padre{
       background-size: cover;
       display:flex;
       flex-flow: column nowrap;
-  
   }
       .menu{
           /* background: rgba(0, 0, 0, 0.2); */

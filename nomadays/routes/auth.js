@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const bcryptSalt = 10;
 
 router.get('/signup', (req, res, next) => {
-  res.render('auth/login');
+  res.render('auth/register');
 });
 
 router.post('/signup', (req, res, next) => {
