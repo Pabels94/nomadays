@@ -1,6 +1,12 @@
+html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+  }
+
 *{
     text-decoration: none;
-    font-family: Avenir, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
     letter-spacing: 1.5px;
   }
 
@@ -87,17 +93,14 @@ padre{
             text-transform: uppercase;
             width: 650px;
             text-align: center; 
-            font-weight: lighter;
+            font-weight: 600;
             font-size: 31px;  
             letter-spacing: 2px;
         }
 
         h1 span{
-            font-size: 42px;
-            
+            font-size: 42px; 
             font-weight: 500;
-            
-           
         }
             .name{
                 background: rgba(255, 255, 255, 0.8);
@@ -113,7 +116,7 @@ padre{
             }
                 .name span{
                     display: flex;
-                    font-size: 16px;
+                    font-size: 14px;
                     color: rgba(80, 80, 80, 0.7);
                 }
 
@@ -131,7 +134,7 @@ padre{
             }
                 .usuario span{
                     display: flex;
-                    font-size: 16px;
+                    font-size: 14px;
                     color: rgba(80, 80, 80, 0.7);
                 }
 
@@ -149,7 +152,7 @@ padre{
 
             .contraseña span{
                 display: flex;
-                font-size: 16px;
+                font-size: 14px;
                 color: rgba(80, 80, 80, 0.7);
             }
 
@@ -168,7 +171,7 @@ padre{
             }
                 .confirm span{
                     display: flex;
-                    font-size: 16px;
+                    font-size: 14px;
                     color: rgba(80, 80, 80, 0.7);
                 }
 
