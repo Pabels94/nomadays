@@ -1,3 +1,9 @@
+html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+  }
+
+
 *{
     text-decoration: none;
     font-family: Avenir, sans-serif;
@@ -94,7 +100,6 @@
                 text-transform: uppercase;
                 /* width: 800px; */
                 text-align: center; 
-                font-weight: lighter;
                 font-size: 45px;  
                 letter-spacing: 2px;
                 font-weight: 500;
@@ -153,9 +158,14 @@
 
 
             /* Hasta @keyframes es todo el boton de scroll */
-  
+            #scroll{
+                display: flex;
+                flex-flow: nowrap;
+                justify-content: center;
+            }
+
             .demo a {
-                bottom: 10px;
+                /* bottom: 10px; */
                 left: 50%;
                 z-index: 2;
                 -webkit-transform: translate(0, -50%);
@@ -168,7 +178,7 @@
                 left: 50%;
                 width: 24px;
                 height: 24px;
-                bottom: 30px;
+                bottom: -10px;
                 margin-left: -12px;
                 border-left: 3px solid rgba(158, 84, 226, 1);
                 border-bottom: 3px solid rgba(158, 84, 226, 1);
@@ -193,4 +203,75 @@
                 }
             }
 
+        .travel{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            margin-top: 80px;
+        }
+
+        .descubrir{
+            margin-bottom: 20px;
+        }
+
+        .travel img{
+            width: 90px;
+        }
+
+        .cities{
+            margin-top: 30px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            padding: 0 120px;
+           
+        }
+
+        .city{
+            width: 300px;
+            height: 300px;
+            background: blueviolet;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            margin: 0 20px 95px 15px;
+            /* margin-bottom: 80px; */
+        }
+            .nameCity{
+                margin-top: 40px;
+                margin-bottom:20px;
+                color: #fff;
+                font-weight: 500;
+                font-size: 42px;
+            }
+            .icon{
+                width: 10%;
+            }
+
+            .roma{
+                background: url("/img/login/roma.jpg");
+            }
+            .berlin{
+                background: url("/img/login/berlin.jpg");
+            }
+            .atenas{
+                background: url("/img/login/atenas.jpg");
+            }
+            .paris{
+                background: url("/img/login/paris.jpg");
+            }
+            .oslo{
+                background: url("/img/login/oslo.jpg");
+            }
+            .amsterdam{
+                background: url("/img/login/amsterdam.jpg");
+            }
+
+
+
+
+            /* .city:hover{
+                background: rgba(158, 84, 226, 0.5);
+            } */
             

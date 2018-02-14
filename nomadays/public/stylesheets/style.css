@@ -11,7 +11,7 @@ padre{
 
   .header{
       
-      background: url("/img/login/background-login.jpg");
+      background: url("/img/login/yeah.jpg");
       background-position: center;
       background-attachment: contain;
       background-size: cover;
@@ -52,7 +52,7 @@ padre{
 
               .descarga a:hover{
                   text-decoration: none;
-                  color:rgba(158, 84, 226, 0.8);
+                  color:#2BFF88;
               }
               
           .hamburguesa{
@@ -220,7 +220,7 @@ padre{
 
           .registrarse a:hover{
              text-decoration: none;
-             color:rgba(133, 64, 197, 0.8);
+             color:#2BFF88;
              font-weight: bold;
           }
 
