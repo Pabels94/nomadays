@@ -1,0 +1,359 @@
+html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+  }
+
+*{
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+  }
+
+  body{
+      margin:none;
+      padding: none;
+  }
+  
+  padre{
+    display:flex;
+    flex-flow: column nowrap;
+  }
+  
+    .header{
+        
+        background: url("/img/login/background-login.jpg");
+        background-position: center;
+        background-attachment: contain;
+        background-size: cover;
+        display:flex;
+        flex-flow: column nowrap;
+    }
+        .menu{
+            display: flex;
+            flex-flow: row nowrap;
+            height: 100px;
+            align-items: center;
+        }
+            .logo{
+               
+                flex: 1 1 auto;
+                display: flex;
+                align-self: center; 
+            }
+  
+                .logo img{
+                    
+                    height: 50px;
+                    margin:10px 0 20px 70px;
+                }
+            
+            .descarga{
+                /* flex: 1 1 auto; */
+                display:flex;
+                align-self: center;
+                margin-top:10px; 
+            }
+                .descarga a {
+                    margin:0;
+                    color:#fff;
+        
+                }
+  
+                .descarga a:hover{
+                    text-decoration: none;
+                    color:#2BFF88;
+                }
+
+            .login{
+                /* flex: 1 1 auto; */
+                display:flex;
+                align-self: center;
+                margin-top:10px; 
+            }
+                .login a {
+                    margin:70px;
+                    color:#fff;
+        
+                }
+
+                .login a:hover{
+                    text-decoration: none;
+                    color:#2BFF88;
+                }
+            .hamburguesa{
+                display: flex;
+                align-self: center; 
+            }
+                .hamburguesa img{
+                    height: 20px;
+                    margin-right: 70px;
+                }
+        .frase-principal{
+            margin-top: 150px;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+        }
+            h1{   
+                color: #fff;
+                text-transform: uppercase;
+                /* width: 800px; */
+                text-align: center; 
+                font-size: 45px;  
+                letter-spacing: 2px;
+                font-weight: 600;
+                margin: 0; 
+            }
+    
+            h2{
+                color: #fff;
+                text-align: center;
+                width: 610px; 
+                font-size: 34px;
+                /* font-family: 'Neuton', serif; */
+                font-family: 'Rokkitt', serif;
+                font-weight: 200;
+                text-transform: none; 
+                margin-top: 20px;
+                margin-bottom: 80px;
+                 
+            }
+
+        .trip{
+            display: flex;
+            flex-flow: row nowrap;
+            background-color: rgba(255, 255, 255, 0.7);
+            height: 45px;
+            width: 565px; 
+            margin:100px 0 50px 0;
+            align-items: center;
+            justify-content: space-between;
+            text-transform: none;
+            padding-left: 31px;
+            font-size: 14px;
+        }
+            .destino{
+                display: flex;
+                align-items: center;
+                height: 30px;
+                padding:0 25px;
+                border-left: solid 2px rgba(158, 84, 226, 1);
+                border-right: solid 2px rgba(158, 84, 226, 1);
+            }
+            .buscar {
+                width: 100px;
+                height: 45px;
+                background: rgb(36, 219, 115);
+                border-style: none;
+            }
+
+                .buscar p{
+                    margin-top: 14px;
+                    color: #fff;
+                    text-transform: uppercase;
+                    font-weight: 400;
+                    font-size: 13px;
+                }
+            .buscar:hover{
+                background: rgba(133, 64, 197, 0.8);
+            }
+
+
+            /* Hasta @keyframes es todo el boton de scroll */
+            #scroll{
+                display: flex;
+                flex-flow: nowrap;
+                justify-content: center;
+            }
+
+            .demo a {
+                /* bottom: 10px; */
+                left: 50%;
+                z-index: 2;
+                -webkit-transform: translate(0, -50%);
+                transform: translate(0, -50%);
+                transition: opacity .3s;
+            }
+            
+            #scroll a span {
+                position: absolute;
+                left: 50%;
+                width: 24px;
+                height: 24px;
+                bottom: -30px;
+                margin-left: -12px;
+                border-left: 3px solid rgba(158, 84, 226, 1);
+                border-bottom: 3px solid rgba(158, 84, 226, 1);
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                -webkit-animation: sdb05 1.5s infinite;
+                animation: sdb05 1.5s infinite;
+                box-sizing: border-box;
+            }
+            
+            @keyframes sdb05 {
+                0% {
+                transform: rotate(-45deg) translate(0, 0);
+                opacity: 0;
+                }
+                50% {
+                opacity: 1;
+                }
+                100% {
+                transform: rotate(-45deg) translate(-20px, 20px);
+                opacity: 0;
+                }
+            }
+
+        .travel{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            margin-top: 80px;
+        }
+
+        .descubrir{
+            margin-bottom: 20px;
+        }
+
+        .travel img{
+            width: 90px;
+        }
+
+        .cities{
+            margin-top: 30px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            padding: 0 120px;
+           
+        }
+
+        .city{
+            width: 300px;
+            height: 300px;
+            background: blueviolet;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            margin: 0 20px 95px 15px;
+            /* margin-bottom: 80px; */
+        }
+            .nameCity{
+                margin-top: 40px;
+                margin-bottom:20px;
+                color: #fff;
+                font-weight: 500;
+                font-size: 42px;
+            }
+            .icon{
+                width: 10%;
+            }
+
+            .roma{
+                background: url("/img/login/roma.jpg");
+            }
+            .berlin{
+                background: url("/img/login/berlin.jpg");
+            }
+            .atenas{
+                background: url("/img/login/atenas.jpg");
+            }
+            .paris{
+                background: url("/img/login/paris.jpg");
+            }
+            .oslo{
+                background: url("/img/login/oslo.jpg");
+            }
+            .amsterdam{
+                background: url("/img/login/amsterdam.jpg");
+            }
+
+
+
+
+            /* .city:hover{
+                background: rgba(158, 84, 226, 0.5);
+            } */
+
+            .rincones{
+                margin-bottom: 40px;
+            }
+
+            .footer{
+                background:rgba(32, 32, 32, 1);
+                display: flex;
+                flex-flow: row nowrap;
+                height: 100px;
+                align-items: center;
+            }
+                .info {
+                    /* background: mediumslateblue; */
+                    /* flex: 1 1 auto; */
+                    height: 100px;
+                    display: flex;
+                    flex-flow: row;
+                    padding-left:50px;
+                }
+                    .info a{
+                        display: flex;
+                        align-items: center;
+                        color: #fff;
+                        font-weight: lighter;
+                        font-size: 14px;
+                        /* margin-top: 10px; */
+                        margin-right: 20px;
+                    }
+        
+                    .info a:hover{
+                        color:rgba(167, 104, 226, 1);
+                        text-decoration: none;
+                    }
+        
+                    .terminos{
+        
+                        display: flex;
+                        flex-flow: row nowrap;
+                        flex: 1 1 auto;
+                        align-items: center;
+                        justify-content: center;
+                        color:#fff;
+                        font-weight: lighter;
+                        font-size: 14px;
+                        flex: 1 1 auto;
+                        height: 95px;
+                    }
+                        .terminos p{
+                            display: flex;
+                            margin: 0;
+        
+        
+                        }
+        
+                .rrss{
+                    flex: 1 1 auto;
+                    display: flex;
+                    flex-flow: row nowrap;
+                    align-items: center;
+                    margin-right: 70px;
+                    justify-content: space-around;
+                    width: 10px;
+        
+                }
+                   .ig img{
+                       height: 30px;
+                       margin: 10px;
+                    }
+        
+                    .pn img{
+                        height: 30px;
+                        margin: 10px;
+                        }
+                    .fb img{
+                        height: 30px;
+                        margin: 10px;
+                        }
+        
+            
