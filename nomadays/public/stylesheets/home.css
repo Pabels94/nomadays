@@ -144,7 +144,7 @@ html {
             .buscar {
                 width: 100px;
                 height: 45px;
-                background: rgb(36, 219, 115);
+                background: #00D76D;
                 border-style: none;
             }
 
@@ -286,7 +286,7 @@ html {
                 border-radius: 10px;
                 border-style: none;
                 color: #fff;
-                background: #2BFF88;
+                background: #00D76D;
             }
 
             .more:hover{
@@ -386,7 +386,7 @@ html {
 
             .nomadas span{
                 font-weight: 500;
-                color: #2BFF88;
+                color: #00D76D;
             }
             .nomadas span:hover{
                 color:rgb(158, 84, 226); 
