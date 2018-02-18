@@ -4,10 +4,16 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
   email: String,
   password: String,
+  rol: String,
+  name: String,
+  age: Number,
+  description: String,
+}, {
+  // trips: [tripId],
+  timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' },
 });
 
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
-
 

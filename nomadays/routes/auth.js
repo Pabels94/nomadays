@@ -17,7 +17,7 @@ router.get('/register', (req, res, next) => {
   res.render('auth/register');
 });
 
-router.post('/signup', (req, res, next) => {
+router.post('/register', (req, res, next) => {
   const { email, password } = req.body;
 
   if (email === '' || password === '') {
