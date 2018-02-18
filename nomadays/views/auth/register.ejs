@@ -24,11 +24,22 @@
         </div>
         <div class="frase-principal">
             <h1>Comienza la experiencia <span>empieza la aventura</span></h1>
-            <div class="name"><span>Nombre y Apellidos</span></div>
-            <div class="usuario"><span>Usuario</span></div>
-            <div class="contraseña"><span>Contraseña</span></div>
-            <div class="confirm"><span>Confirmar contraseña</span></div>
-            <button class="enter"><p>Regístrate</p></button>   
+            <form action="/auth/register" method="post">
+
+                <div class="name">
+                    <input type="text" name="name" placeholder="Nombre" value="<%= typeof name!='undefined' ? name : '' %>" required>
+                </div>
+                <div class="usuario">
+                    <input type="email" name="email"  placeholder="Email" value="<%= typeof email!='undefined' ? email : '' %>" required>
+                </div>
+                <div class="contraseña">
+                    <input type="password" name="password"  placeholder="Password" value="<%= typeof password!='undefined' ? password : '' %>" required>
+                </div>
+                <div class="confirm">
+                    <input type="password" name="password2"  placeholder="Confirma Password" value="<%= typeof password2!='undefined' ? password2 : '' %>" required>
+                </div>
+                <button class="submit"><p>Regístrate</p></button>   
+            </form>
         </div>
     </header>
     <footer class="footer">

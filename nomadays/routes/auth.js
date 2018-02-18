@@ -1,7 +1,13 @@
 const express = require('express');
-const router = express.Router();
-const User = require('../models/user');
 const bcrypt = require('bcrypt');
+const passport = require('passport');
+
+const router = express.Router();
+
+// Importamos el modelo de usuario
+const User = require('../models/User');
+
+// Definimos la constante  para bcrypt
 const bcryptSalt = 10;
 
 
@@ -9,52 +15,72 @@ router.get('/login', (req, res, next) => {
   res.render('auth/login');
 });
 
-router.get('/home', (req, res, next) => {
-  res.render('auth/home');
+router.post('/login', (req, res, next) => {
+  passport.authenticate('local', {
+    successRedirect: '/home',
+    failureRedirect: '/auth/login',
+    failureFlash: true,
+  })(req, res, next);
 });
 
 router.get('/register', (req, res, next) => {
   res.render('auth/register');
 });
 
-router.post('/signup', (req, res, next) => {
-  const { email, password } = req.body;
+router.post('/register', (req, res, next) => {
+  const errors = [];
+  const { name, email, password, password2 } = req.body;
 
-  if (email === '' || password === '') {
-    const error = 'usuario y password no pueden estar vacíos';
-    res.render('auth/signup', { error });
+  if (password !== password2) {
+    errors.push({ text: 'Password do not match' });
+  }
+
+  if (password.length < 4) {
+    errors.push({ text: 'Password must be at least 4 characters' });
+  }
+
+  if (errors.length > 0) {
+    res.render('auth/register', {
+      errors,
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+      password2: req.body.password2,
+    });
   } else {
     User.findOne({ email })
       .then((user) => {
-        if (!user) {
+        if (user) {
+          req.flash('error_msg', 'Email existente');
+          res.redirect('/auth/login');
+        } else {
+          const newUser = {
+            name: req.body.name,
+            email: req.body.email,
+            password: req.body.password,
+          };
           const salt = bcrypt.genSaltSync(bcryptSalt);
           const hashPass = bcrypt.hashSync(password, salt);
-          const newUser = {
-            email,
-            password: hashPass,
-          };
-
+          newUser.password = hashPass;
           User.create(newUser)
-            .then((doc) => {
-              res.redirect('/');
+            .then((userCreated) => {
+              res.redirect('/auth/login');
             })
-            .catch((err) => {
-              const error = 'Ha ocurrido un problema la crear el usuario';
-              res.render('auth/signup', { error });
+            .catch((error) => {
+              req.flash('error_msg', 'Ha ocurrido un problema al crear el usuario');
+              res.redirect('/auth/register');
             });
-        } else {
-          const error = 'El usuario ya existe';
-          res.render('auth/signup', { error });
         }
-      })
-      .catch((error) => {
-        next(error);
       });
   }
 });
 
-
-
+// Logout user
+router.get('/logout', (req, res, next) => {
+  req.logout();
+  req.flash('success-message', 'You are logged out');
+  res.redirect('/users/login');
+});
 
 
 module.exports = router;

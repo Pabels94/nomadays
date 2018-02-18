@@ -18,7 +18,12 @@
                 <a target="_blank" href="https://www.behance.net/gallery/43584021/NOMADAYS-app" class="descargar">Descarga la app</a>
             </div>
             <div class="login">
-                <a href="/login" class="login">Entrar</a>
+                <% if (locals.user) { %>
+                    <a href="/auth/login" class="login"><%= locals.user.name %></a>
+                <% } else {  %> 
+                    <a href="/auth/login" class="login">Entrar</a>
+                <% } %>    
+                
             </div>
             <div class="hamburguesa">
                 <a href="index.html">

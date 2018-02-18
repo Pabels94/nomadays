@@ -23,19 +23,25 @@
       </div>
       <div class="frase-principal">
           <h1>Deja que el mundo te <span>sorprenda</span></h1>
-          <div class="usuario"><span>usuario</span></div>
-          <div class="contraseña"><span>contraseña</span></div>
-          <div class="remember">
-              <div class="recordar">
-                  <button class="square"></button>
-                  <p>recordar mis datos</p>
-              </div>
-              <div class="olvidaste">
-                  <p>¿olvidaste la contraseña?</p>
-              </div>
-          </div>
-          <button class="enter"><p>entrar</p></button>
-          <div class="registrarse"><p>¿Aun no eres nómada?</p><a href="/register">Regístrate</a></div>
+          <form method='post' action='/auth/login'>
+            <div class="usuario">
+                <input type="email" name="email" required>
+            </div>
+            <div class="contraseña">
+                <input type="password" name="password" required>
+            </div>
+            <div class="remember">
+                <div class="recordar">
+                    <button class="square"></button>
+                    <p>recordar mis datos</p>
+                </div>
+                <div class="olvidaste">
+                    <p>¿olvidaste la contraseña?</p>
+                </div>
+            </div>
+            <button class="submit"><p>entrar</p></button>
+            <div class="registrarse"><p>¿Aun no eres nómada?</p><a href="/auth/register">Regístrate</a></div>
+          </form>
       </div>
   </header>
   <footer class="footer">

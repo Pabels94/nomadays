@@ -185,7 +185,7 @@ padre{
               }
       
 
-          .enter {
+          .submit {
               margin-top: 20px;
               width: 100px;
               height: 35px;
@@ -195,7 +195,7 @@ padre{
               margin-bottom: 10px;
           }
 
-              .enter p{
+              .submit p{
                   margin-top: 6px;
                   color: #fff;
                   text-transform: uppercase;
@@ -203,7 +203,7 @@ padre{
                   margin-bottom: 3px;
                   
               }
-          .enter:hover{
+          .submit:hover{
               background: rgba(133, 64, 197, 0.8);
           }
 
