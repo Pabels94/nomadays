@@ -86,6 +86,7 @@ padre{
             display: flex;
             flex-flow: column nowrap;
             align-items: center;
+            height: 70%;
         }
         h1{
               
@@ -201,6 +202,10 @@ padre{
         flex-flow: row nowrap;
         height: 100px;
         align-items: center;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: fixed;
     }
         .info {
             /* background: mediumslateblue; */
