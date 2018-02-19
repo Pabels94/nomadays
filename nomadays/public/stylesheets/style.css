@@ -80,7 +80,7 @@ padre{
           display: flex;
           flex-flow: column nowrap;
           align-items: center;
-          height: 70%;
+          height: 80%;
       }
 
       .frase-principal form{
@@ -193,6 +193,7 @@ padre{
               display: flex;
               align-self: center;
               background: none;
+              border-radius: 2px;
           }
 
           .square:hover{
@@ -227,6 +228,7 @@ padre{
               background: rgba(32, 32, 32, 0.7);
               border-style: none;
               margin-bottom: 10px;
+            
           }
 
               .submit p{
@@ -235,7 +237,7 @@ padre{
                   text-transform: uppercase;
                   font-size: 12px;
                   margin-bottom: 3px;
-                  
+                  font-weight: 400;
               }
           .submit:hover{
               background: rgba(133, 64, 197, 0.8);

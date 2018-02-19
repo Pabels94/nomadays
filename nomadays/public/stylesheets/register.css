@@ -82,11 +82,18 @@ padre{
 
         .frase-principal{
             /* background: rgba(175, 238, 238, 0.3); */
-            margin-top: 80px;
+            margin-top: 45px;
             display: flex;
             flex-flow: column nowrap;
             align-items: center;
-            height: 70%;
+            height: 80%;
+        }
+
+        form{
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+        
         }
         h1{
               
@@ -104,22 +111,31 @@ padre{
             font-weight: 500;
         }
             .name{
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                align-items: center;
                 background: rgba(255, 255, 255, 0.8);
                 width: 300px;
                 height: 32px;
                 border-radius: 20px;
                 margin-top: 50px;
-                display: flex;
-                flex-flow: row nowrap;
-                justify-content: center;
-                align-items: center;
 
             }
-                .name span{
-                    display: flex;
-                    font-size: 14px;
-                    color: rgba(80, 80, 80, 0.7);
-                }
+            
+            .name input{
+                display: flex;
+                justify-content: center;
+                border:none;
+                background: none;
+                padding: 0 40px;
+                width: 120%;
+                height: 100%;
+            }
+
+            .name input:focus{
+                outline: none;  
+            }
 
             .usuario{
                 background: rgba(255, 255, 255, 0.8);
@@ -133,11 +149,19 @@ padre{
                 align-items: center;
 
             }
-                .usuario span{
-                    display: flex;
-                    font-size: 14px;
-                    color: rgba(80, 80, 80, 0.7);
-                }
+            .usuario input{
+                display: flex;
+                justify-content: center;
+                border:none;
+                background: none;
+                padding: 0 40px;
+                width: 120%;
+                height: 100%;
+            }
+
+            .usuario input:focus{
+                outline: none;  
+            }
 
             .contraseña{
                 background: rgba(255, 255, 255, 0.8);
@@ -151,10 +175,18 @@ padre{
                 align-items: center;
             }
 
-            .contraseña span{
+            .contraseña input{
                 display: flex;
-                font-size: 14px;
-                color: rgba(80, 80, 80, 0.7);
+                justify-content: center;
+                border:none;
+                background: none;
+                padding: 0 40px;
+                width: 120%;
+                height: 100%;
+            }
+
+            .contraseña input:focus{
+                outline: none;  
             }
 
             .confirm{
@@ -167,16 +199,23 @@ padre{
                 flex-flow: row nowrap;
                 justify-content: center;
                 align-items: center;
-
-
             }
-                .confirm span{
-                    display: flex;
-                    font-size: 14px;
-                    color: rgba(80, 80, 80, 0.7);
-                }
 
-            .enter {
+            .confirm input{
+                display: flex;
+                justify-content: center;
+                border:none;
+                background: none;
+                padding: 0 40px;
+                width: 120%;
+                height: 100%;
+            }
+
+            .confirm input:focus{
+                outline: none;  
+            }
+
+            .submit {
                 margin-top: 30px;
                 width: 120px;
                 height: 35px;
@@ -186,14 +225,17 @@ padre{
                 margin-bottom: 70px;
             }
 
-                .enter p{
-                    margin-top: 9px;
+                .submit p{
+                    margin-top: 10px;
                     color: #fff;
                     text-transform: uppercase;
                     font-size: 12px;
+                    font-weight: 400;
+                    letter-spacing: 2px;
                 }
-            .enter:hover{
+            .submit:hover{
                 background: rgba(133, 64, 197, 0.8);
+                
             }
 
     .footer{
