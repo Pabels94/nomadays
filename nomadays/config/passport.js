@@ -1,4 +1,5 @@
 const LocalStrategy = require('passport-local').Strategy;
+const flash = require('connect-flash');
 const bcrypt = require('bcrypt');
 
 // Load user model
@@ -9,7 +10,8 @@ module.exports = (passport) => {
       email,
     }).then((user) => {
       if (!user) {
-        return done(null, false, { message: 'El usuario no existe' });
+             
+        return done(null, false, {message: 'El usuario no existe'});
       }
       if (!bcrypt.compareSync(password, user.password)) {
         return done(null, false, { message: 'El password es incorrecto' });
