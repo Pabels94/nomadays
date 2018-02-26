@@ -106,7 +106,23 @@
             <button class="delete first two">Eliminar</button>
         </div>
     </div>
-    <button class="new">NUEVO</button>
+
+
+    <div class="box">
+        <a class="button" href="#popup1">Nuevo</a>
+    </div>
+        
+    <div id="popup1" class="overlay">
+        <div class="popup"> 
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                <input type="text" name="name" placeholder="Lugar" value="<%= typeof place!='undefined' ? place : '' %>" required>
+            </div>
+            <button class="new">Buscar</button>
+            <div class="map"></div>
+        </div>
+    </div>
+
     <footer class="footer">
             <div class="info">
                 <a  href="" class="contacto">Contacto</a>
@@ -116,21 +132,17 @@
             <div class="terminos"><p>© Nomadays  S.L. All rights reserved</p></div>
             <div class="rrss">
     
-                            <a class="ig" href="login.html">
-                                <img src="/img/login/icono1.png" alt= "" >
-                            </a>
-    
-    
-    
-                             <a class="pn" href="login.html">
-                                 <img src="/img/login/icono2.png" alt= "" >
-                             </a>
-    
-    
-    
-                            <a class="fb" href="login.html">
-                                 <img src="/img/login/icono3.png" alt= "" >
-                            </a>
+                <a class="ig" href="login.html">
+                    <img src="/img/login/icono1.png" alt= "" >
+                </a>
+
+                <a class="pn" href="login.html">
+                    <img src="/img/login/icono2.png" alt= "" >
+                </a>
+
+                <a class="fb" href="login.html">
+                        <img src="/img/login/icono3.png" alt= "" >
+                </a>
     
             </div>
     
