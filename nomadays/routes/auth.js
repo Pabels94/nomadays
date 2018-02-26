@@ -23,6 +23,14 @@ router.post('/login',  (req, res, next) => {
   })(req, res, next);
 });
 
+// esto está añadido por pablo cambiar luego
+
+router.get('/profile', (req, res, next) => {
+  res.render('auth/profile/profile');
+});
+
+// esto está añadido por pablo cambiar luego
+
 router.get('/register', (req, res, next) => {
   res.render('auth/register');
 });

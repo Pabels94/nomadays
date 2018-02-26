@@ -1,0 +1,138 @@
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rokkitt:200,300,400" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+</head>
+
+<div class="padre">
+
+    <header class= "header">
+        
+        <div class= "menu">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/img/login/logotipo.png" alt= "" >
+                </a>
+            </div>
+            <div class="descarga">
+                <a target="_blank" href="https://www.behance.net/gallery/43584021/NOMADAYS-app" class="descargar">Descarga la app</a>
+            </div>
+            <div class="login">
+                <% if (locals.user) { %>
+                    <a href="/auth/login" class="login"><%= locals.user.name %></a>
+                <% } else {  %> 
+                    <a href="/auth/login" class="login">Entrar</a>
+                <% } %>    
+                
+            </div>
+            <div class="hamburguesa">
+                <a href="index.html">
+                    <img src="/img/login/hamburguer-menu-black.png" alt= "" >
+                </a>
+            </div>
+        </div>
+        <div class="profileInfo">
+                <div class="user">
+                    <img class="picture" src="/img/login/profile.png" alt= "" >
+                    <button class="edit"><p>Edita tu perfil</p></button>
+                </div>
+                <div class="aboutMe">
+                    <div class="name">Pablo Hermoso</div>
+                    <div class="email">pablohermosog@gmail.com</div>
+                    <button class="add"><p>¿A qué esperas? Completa tu perfil</p></button>
+                </div>
+            </div>
+                <p class="hobbies">"Me considero una persona aventurera, que está en constante busqueda de nuevas experiencias alejadas del turismo, donde poder ser yo mismo, conocer nuevas culturas y recorrer el mundo con lo básico, solos mi cámara y yo"</p>
+    </header>
+    <div class="tittle">MIS VIAJES</div>
+    <div class="myTrips">
+        
+        <div class="trip">
+            <div class="field">Origen</div>
+            <div class="origen first">Madrid</div>
+            <div class="origen first">Barcelona</div>
+        </div>
+        <div class="trip">
+            <div class="field">Destino</div>
+            <div class="destino first">Amsterdam</div>
+            <div class="destino first">Praga</div>
+        </div>
+        <div class="trip">
+            <div class="field">Salida</div>
+            <div class="destino first">26/4/18</div>
+            <div class="destino first">02/8/18</div>
+        </div>
+        <div class="trip">
+            <div class="field">Llegada</div>
+            <div class="destino first">14/5/18</div>
+            <div class="destino first">30/9/18</div>
+        </div>
+        <div class="trip second">
+            <div class="field"></div>
+            <button class="edits first one">Editar</button>
+            <button class="edits first one">Editar</button>
+        </div>
+        <div class="trip second">
+            <div class="field"></div>
+            <button class="delete first two">Eliminar</button>
+            <button class="delete first two">Eliminar</button>
+        </div>
+    </div>
+    <button class="new">NUEVO</button>
+
+    <div class="tittle">MIS LUGARES</div>
+    <div class="myPlaces">
+        
+        <div class="place">
+            <div class="field">Lugar</div>
+            <div class="placeSite first">Razzmatazz</div>
+            <div class="placeSite first">Luri Sushi</div>
+        </div>
+        <div class="place">
+            <div class="field">Latitud</div>
+            <div class="Coordinates first">41.39751164405828</div>
+            <div class="Coordinates first">41.3979347</div>
+        </div>
+        <div class="place">
+            <div class="field">Longitud</div>
+            <div class="Coordinates first">2.1904850006103516</div>
+            <div class="Coordinates first">2.131418599999961</div>
+        </div>
+    
+        <div class="place second">
+            <div class="field"></div>
+            <button class="delete first two">Eliminar</button>
+            <button class="delete first two">Eliminar</button>
+        </div>
+    </div>
+    <button class="new">NUEVO</button>
+    <footer class="footer">
+            <div class="info">
+                <a  href="" class="contacto">Contacto</a>
+                <a  href="" class="condiciones">Condiciones legales</a>
+                <a  href=""class="work">Trabaja con nosotros</a>
+            </div>
+            <div class="terminos"><p>© Nomadays  S.L. All rights reserved</p></div>
+            <div class="rrss">
+    
+                            <a class="ig" href="login.html">
+                                <img src="/img/login/icono1.png" alt= "" >
+                            </a>
+    
+    
+    
+                             <a class="pn" href="login.html">
+                                 <img src="/img/login/icono2.png" alt= "" >
+                             </a>
+    
+    
+    
+                            <a class="fb" href="login.html">
+                                 <img src="/img/login/icono3.png" alt= "" >
+                            </a>
+    
+            </div>
+    
+        </footer>
+      </div>
