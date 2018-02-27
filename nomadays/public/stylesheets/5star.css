@@ -1,0 +1,47 @@
+.rate-area {
+    float: left;
+    border-style: none;
+    left: 500px;
+    padding:0;
+  }
+  
+  .rate-area:not(:checked) > input {
+    position: absolute;
+    top: -9999px;
+    clip: rect(0,0,0,0);
+  }
+  
+  .rate-area:not(:checked) > label {
+    float: right;
+    width: 1em;
+
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 200%;
+    line-height: 1.2;
+    color: rgb(194, 193, 193);
+    text-shadow: 1px 1px #bbb;
+    margin: 0 5px;
+  }
+  
+  .rate-area:not(:checked) > label:before { content: '★ '; }
+  
+  .rate-area > input:checked ~ label {
+    color: #2BFF88;
+    text-shadow: 1px 1px rgb(35, 202, 107);
+    font-size: 210% !important;
+  }
+  
+  .rate-area:not(:checked) > label:hover, .rate-area:not(:checked) > label:hover ~ label { color: #2BFF88; }
+  
+  .rate-area > input:checked + label:hover, .rate-area > input:checked + label:hover ~ label, .rate-area > input:checked ~ label:hover, .rate-area > input:checked ~ label:hover ~ label, .rate-area > label:hover ~ input:checked ~ label {
+    color: #2BFF88;
+    text-shadow: 1px 1px #2BFF88;
+  }
+  
+  .rate-area > label:active {
+    position: relative;
+    top: 2px;
+    left: 2px;
+  }
