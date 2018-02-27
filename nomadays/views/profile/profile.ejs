@@ -1,0 +1,12 @@
+<h1>Trips</h1>
+<% if (typeof(trips) != 'undefined') { %>
+    <% trips.forEach(function(trip) { %>
+        <div class="card card-body">
+            <h4><%= trip.originCity %></h4>
+            <h4><%= trip.destinationCity %></h4>
+            <h4><%= moment(trip.dateInitial).format('YYYY-MM-DD') %></h4>
+            <h4><%= moment(trip.dateEnd).format('YYYY-MM-DD') %></h4>
+            <a class="btn btn-dark btn-block mb-2" href="/profile/updateTrip/<%- trip.id %>">Edit</a>
+        </div>
+    <% }); %>
+<% } %>

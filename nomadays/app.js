@@ -5,7 +5,10 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const expressLayouts = require('express-ejs-layouts');
 const expressSession = require('express-session');
+const methodOverride = require('method-override');
+const moment = require('moment');
 const passport = require('passport');
 const flash = require('connect-flash');
 const LocalStrategy = require('passport-local');
@@ -19,6 +22,7 @@ const passportConfiguration = require('./config/passport');
 // Routes requires
 const index = require('./routes/index');
 const auth = require('./routes/auth');
+const profile = require('./routes/profile');
 
 require('./config/passport')(passport);
 
@@ -38,8 +42,10 @@ mongoose.connect('mongodb://localhost/nomadays', {
   .catch(err => console.log(err));
 
 // view engine setup
+app.use(expressLayouts);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.set('layout', 'layouts/main');
 
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -48,6 +54,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Method overrride middelware
+app.use(methodOverride('_method'));
+
 app.use(expressSession({
   secret: 'secret-pass',
   resave: false,
@@ -64,11 +74,13 @@ app.use((req, res, next) => {
   res.locals.error_msg = req.flash('error_msg');
   res.locals.error = req.flash('error');
   res.locals.user = req.user || null;
+  app.locals.moment = moment;
   next();
 });
 
 app.use('/', index);
 app.use('/auth', auth);
+app.use('/profile', profile);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

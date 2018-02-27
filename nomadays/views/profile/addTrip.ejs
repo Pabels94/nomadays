@@ -1,0 +1,62 @@
+<div class="card card-body">
+    <h3>Add Trip</h3>
+    <form action="/profile/addTrip" method="post">
+        <div class="form-group">
+            <label for="originCity">Origin City</label>
+            <select class="form-control" id="originCity" name="originCity">
+            <% if (typeof(cities) != 'undefined') { %>
+                <% cities.forEach(function(cities) { %>
+                   <option value="<%- cities.name %>"><%- cities.name %></option>
+                <% }); %>
+            <% } %>
+            </select>                
+  
+        </div>
+        <div class="form-group">
+            <label for="destinationCity">Origin City</label>
+            <select class="form-control" id="destinationCity" name="destinationCity">
+            <% if (typeof(cities) != 'undefined') { %>
+                <% cities.forEach(function(cities) { %>
+                   <option value="<%- cities.name %>"><%- cities.name %></option>
+                <% }); %>
+            <% } %>
+            </select>                
+        </div>
+        <div class="form-group">
+            <label for="dateInitial">Date Initial</label>
+            <input type="text" class="form-control" id="dateInitial" name="dateInitial">
+        </div>
+        <div class="form-group">
+            <label for="dateEnd">date End</label>
+            <input type="text" class="form-control" id="dateEnd" name="dateEnd"></input>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Trip</button>
+    </form>
+</div>
+
+<%- contentFor('scripts') %>
+<script>
+
+    $(document).ready(() => {
+        $('#dateInitial').datepicker({
+            isRTL: false,
+            autoclose: true, 
+            format: 'yyyy/mm/dd',
+            lang: 'es',
+            weekStart: 1,
+        });
+
+        $('#dateEnd').datepicker({
+            isRTL: false,
+            autoclose: true, 
+            format: 'yyyy/mm/dd',
+            lang: 'es',
+            weekStart: 1,
+        });
+        
+    });    
+
+</script>
+
+
+
