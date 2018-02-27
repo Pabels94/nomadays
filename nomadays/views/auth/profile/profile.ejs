@@ -48,47 +48,32 @@
     <div class="tittle">MIS VIAJES</div>
     <div class="myTrips">
         <% if (typeof(trips) != 'undefined') { %>
+            <% trips.forEach(function(trip) { %>
                 <div class="trip">
                     <div class="field">Origen</div>
-                    <% trips.forEach(function(trip) { %>
-                        <div class="origen first"><%- trip.originCity %></div>
-                    <% }); %>
+                    <div class="origen first"><%= trip.originCity %></div>
                 </div>
                 <div class="trip">
                     <div class="field">Destino</div>
-                    <% trips.forEach(function(trip) { %>
-                        <div class="destino first"><%- trip.destinationCity %></div>
-                    <% }); %>
+                    <div class="destino first"><%= trip.destinationCity %></div>
                 </div>
-
                 <div class="trip">
                     <div class="field">Salida</div>
-                    <% trips.forEach(function(trip) { %>
-                        <div class="destino first"><%= moment(trip.dateInitial).format('YYYY-MM-DD') %></div>
-                    <% }); %>
+                    <div class="destino first"><%= moment(trip.dateInitial).format('YYYY-MM-DD') %></div>
                 </div>
                 <div class="trip">
                     <div class="field">Llegada</div>
-                    <% trips.forEach(function(trip) { %>
-                        <div class="destino first"><%= moment(trip.dateEnd).format('YYYY-MM-DD') %></div>
-                    <% }); %>
+                    <div class="destino first"><%= moment(trip.dateEnd).format('YYYY-MM-DD') %></div>
                 </div>
 
                 <div class="trip second">
                     <div class="field"></div>
-                    <% trips.forEach(function(trip) { %>
-                        <a class="new" href="/profile/updateTrip/<%- trip.id %>">Edit</a>
-                    <% }); %>
+                    <a class="btn btn-dark btn-block mb-2" href="/profile/updateTrip/<%- trip.id %>">Edit</a>
                 </div>
+            <% }); %>
         <% } %>
 
-
-    </div>
-
-
-    <a class="new" href="/profile/addTrip">Nuevo</a>
-
-    
+    <button class="new">NUEVO</button>
 
     <div class="tittle">MIS LUGARES</div>
     <div class="myPlaces">

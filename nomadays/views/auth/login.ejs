@@ -24,11 +24,16 @@
       <div class="frase-principal">
           <h1>Deja que el mundo te <span>sorprenda</span></h1>
           <form method='post' action='/auth/login'>
+            <div class="error">
+                <% if (typeof(error) != 'undefined') { %>
+                    <p><%= error %></p>    
+                <% } %>
+            </div>
             <div class="usuario">
-                <input type="email" name="email" required>
+                <input type="email" name="email" required placeholder="Usuario">
             </div>
             <div class="contraseña">
-                <input type="password" name="password" required>
+                <input type="password" name="password" required required placeholder="Contraseña">
             </div>
             <div class="remember">
                 <div class="recordar">

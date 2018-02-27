@@ -15,7 +15,7 @@ router.get('/login', (req, res, next) => {
   res.render('auth/login');
 });
 
-router.post('/login', (req, res, next) => {
+router.post('/login',  (req, res, next) => {
   passport.authenticate('local', {
     successRedirect: '/home',
     failureRedirect: '/auth/login',
@@ -23,12 +23,20 @@ router.post('/login', (req, res, next) => {
   })(req, res, next);
 });
 
+// esto está añadido por pablo cambiar luego
+
+router.get('/profile', (req, res, next) => {
+  res.render('auth/profile/profile');
+});
+
+// esto está añadido por pablo cambiar luego
+
 router.get('/register', (req, res, next) => {
   res.render('auth/register');
 });
 
 router.post('/register', (req, res, next) => {
-  const errors = [];
+  const errors = '';
   const { name, email, password, password2 } = req.body;
 
   if (password !== password2) {
