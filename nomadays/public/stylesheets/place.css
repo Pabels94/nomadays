@@ -1,0 +1,253 @@
+html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+  }
+
+*{
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+  }
+
+  body{
+      margin:none;
+      padding: none;
+  }
+  
+  padre{
+    display:flex;
+    flex-flow: column nowrap;
+  }
+  
+    .header{
+        background: url("/img/login/background-place-food.jpg");
+        background-position: center;
+        background-attachment: contain;
+        background-size: cover;
+        display:flex;
+        flex-flow: column nowrap;
+    }
+        .menu{
+            display: flex;
+            flex-flow: row nowrap;
+            height: 100px;
+            align-items: center;
+        }
+            .logo{
+               
+                flex: 1 1 auto;
+                display: flex;
+                align-self: center; 
+            }
+  
+                .logo img{
+                    
+                    height: 50px;
+                    margin:10px 0 20px 70px;
+                }
+
+
+            .descarga{
+                /* flex: 1 1 auto; */
+                display:flex;
+                align-self: center;
+                margin-top:10px; 
+            }
+                .descarga a {
+                    margin:0;
+                    margin-right: 70px;
+                    color:rgb(255, 255, 255);
+                }
+  
+                .descarga a:hover{
+                    text-decoration: none;
+                    color:#2BFF88;
+                }
+
+            .login{
+                /* flex: 1 1 auto; */
+                display:flex;
+                align-self: center;
+                margin-top:10px; 
+            }
+                .login a {
+                    margin:70px;
+                    color:rgb(41, 41, 41);
+        
+                }
+
+                .login a:hover{
+                    text-decoration: none;
+                    color:#2BFF88;
+                }
+            .hamburguesa{
+                display: flex;
+                align-self: center; 
+            }
+                .hamburguesa img{
+                    height: 20px;
+                    margin-right: 70px;
+                }
+
+        .frase-principal{
+            margin-top: 50px;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+        }
+            h1{   
+                color: #fff;
+                text-transform: uppercase;
+                /* width: 800px; */
+                text-align: center; 
+                font-size: 45px;  
+                letter-spacing: 2px;
+                font-weight: 600;
+                margin: 0 0 70px 0; 
+            }
+    .file{
+        display: flex;
+        flex-flow: row nowrap;
+        margin: 5% 5%;
+    }
+
+    .rating{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+        .restaurant{ 
+            /* width: 42%;
+            height: 42%; */
+            max-width:305px;
+            max-height:260px;
+            width: auto;
+            height: auto;
+        }
+
+        .file .info{
+            display: flex;
+            flex-flow: column nowrap;
+            padding: 0;
+            margin-top: 50px;
+            margin-left: 80px;
+            width: 1700px;
+            
+        }
+            .file .info .first{
+                margin-bottom: 25px;
+                left: 50px;
+                font-size: 120%;
+                font-weight: 500;
+                color: rgb(68, 68, 68);
+            }
+
+            .file .info .first .name{
+                font-weight: 150%;
+            }
+
+    .description{
+        margin: 30px 20px 0 0; 
+        display: flex;
+        flex-flow: column nowrap;
+    } 
+        .description .tittle{
+            font-size: 120%;
+            font-weight: 500;
+            color: rgba(158, 84, 226, 1);
+            margin: 0 0 20px 0;
+        }
+        .description p{
+            font-size: 120%;
+            line-height: 32px;
+            margin:0;
+        }
+
+    .map img{
+        width: 100%;
+        height: 60%;
+    }
+
+    
+
+.footer{
+    background:rgba(32, 32, 32, 1);
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100px;
+    align-items: center;
+    /* bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed; */
+}
+    .info {
+        /* background: mediumslateblue; */
+        /* flex: 1 1 auto; */
+        height: 100px;
+        display: flex;
+        flex-flow: row;
+        padding-left:50px;
+    }
+        .info a{
+            display: flex;
+            align-items: center;
+            color: #fff;
+            font-weight: lighter;
+            font-size: 14px;
+            /* margin-top: 10px; */
+            margin-right: 20px;
+        }
+
+        .info a:hover{
+            color:rgba(167, 104, 226, 1);
+            text-decoration: none;
+        }
+
+        .terminos{
+
+            display: flex;
+            flex-flow: row nowrap;
+            flex: 1 1 auto;
+            align-items: center;
+            justify-content: center;
+            color:#fff;
+            font-weight: lighter;
+            font-size: 14px;
+            flex: 1 1 auto;
+            height: 95px;
+        }
+            .terminos p{
+                display: flex;
+                margin: 0px;
+            }
+
+            .info a .work{
+                margin:0;
+            }
+
+    .rrss{
+        flex: 1 1 auto;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        margin-right: 70px;
+        justify-content: space-around;
+        width: 10px;
+
+    }
+        .ig img{
+            height: 30px;
+            margin: 10px;
+        }
+
+        .pn img{
+            height: 30px;
+            margin: 10px;
+            }
+        .fb img{
+            height: 30px;
+            margin: 10px;
+            }
+            

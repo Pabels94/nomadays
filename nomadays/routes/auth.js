@@ -29,6 +29,10 @@ router.get('/profile', (req, res, next) => {
   res.render('auth/profile/profile');
 });
 
+router.get('/place', (req, res, next) => {
+  res.render('auth/placeFile');
+});
+
 // esto está añadido por pablo cambiar luego
 
 <<<<<<< HEAD

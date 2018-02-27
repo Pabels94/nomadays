@@ -47,6 +47,7 @@
     </header>
     <div class="tittle">MIS VIAJES</div>
     <div class="myTrips">
+<<<<<<< HEAD
         <% if (typeof(trips) != 'undefined') { %>
             <% trips.forEach(function(trip) { %>
                 <div class="trip">
@@ -64,15 +65,99 @@
                 <div class="trip">
                     <div class="field">Llegada</div>
                     <div class="destino first"><%= moment(trip.dateEnd).format('YYYY-MM-DD') %></div>
+=======
+            <div class="trip">
+                    <div class="field">Origen</div>
+                    
+                        <div class="origen first">Atenas</div>
+                    
+                        <div class="origen first">Paris</div>
+                    
+                        <div class="origen first">Barcelona</div>
+                    
+                        <div class="origen first">Barcelona</div>
+                    
+                        <div class="origen first">kjgh</div>
+                    
+                        <div class="origen first">Atenas</div>
+                    
+                </div>
+                <div class="trip">
+                    <div class="field">Destino</div>
+                    
+                        <div class="destino first">Rome</div>
+                    
+                        <div class="destino first">Londres 2</div>
+                    
+                        <div class="destino first">Amsterdam2</div>
+                    
+                        <div class="destino first">Paris</div>
+                    
+                        <div class="destino first">kjhgkjhg</div>
+                    
+                        <div class="destino first">Montecarlo 2</div>
+                    
+>>>>>>> c1d4bb3260568ef0d96a1b7021df1c24d0d025e5
                 </div>
 
                 <div class="trip second">
                     <div class="field"></div>
+<<<<<<< HEAD
                     <a class="btn btn-dark btn-block mb-2" href="/profile/updateTrip/<%- trip.id %>">Edit</a>
                 </div>
             <% }); %>
         <% } %>
 
+=======
+                    
+                        <a class="btn btn-dark btn-block mb-2" href="/profile/updateTrip/5a91b35c799a5900e0c9fabc">Edit</a>
+                    
+                        <a class="btn btn-dark btn-block mb-2" href="/profile/updateTrip/5a9151db2a063334ecf2928f">Edit</a>
+                    
+                        <a class="btn btn-dark btn-block mb-2" href="/profile/updateTrip/5a913c51c12c3c244854ee08">Edit</a>
+                    
+                        <a class="btn btn-dark btn-block mb-2" href="/profile/updateTrip/5a89e6af46917c16f44398a2">Edit</a>
+                    
+                        <a class="btn btn-dark btn-block mb-2" href="/profile/updateTrip/5a913a79c12c3c244854ee07">Edit</a>
+                    
+                        <a class="btn btn-dark btn-block mb-2" href="/profile/updateTrip/5a89e6af46917c16f44398a3">Edit</a>
+                    
+                </div>
+
+
+
+        <!-- <div class="trip">
+            <div class="field">Origen</div>
+            <div class="origen first">Madrid</div>
+            <div class="origen first">Barcelona</div>
+        </div>
+        <div class="trip">
+            <div class="field">Destino</div>
+            <div class="destino first">Amsterdam</div>
+            <div class="destino first">Praga</div>
+        </div>
+        <div class="trip">
+            <div class="field">Salida</div>
+            <div class="destino first">26/4/18</div>
+            <div class="destino first">02/8/18</div>
+        </div>
+        <div class="trip">
+            <div class="field">Llegada</div>
+            <div class="destino first">14/5/18</div>
+            <div class="destino first">30/9/18</div>
+        </div>
+        <div class="trip second">
+            <div class="field"></div>
+            <button class="edits first one">Editar</button>
+            <button class="edits first one">Editar</button>
+        </div>
+        <div class="trip second">
+            <div class="field"></div>
+            <button class="delete first two">Eliminar</button>
+            <button class="delete first two">Eliminar</button>
+        </div> -->
+    </div>
+>>>>>>> c1d4bb3260568ef0d96a1b7021df1c24d0d025e5
     <button class="new">NUEVO</button>
 
     <div class="tittle">MIS LUGARES</div>
@@ -110,7 +195,7 @@
         <div class="popup"> 
             <a class="close" href="#">&times;</a>
             <div class="content">
-                <input type="text" name="name" placeholder="Lugar" value="<%= typeof place!='undefined' ? place : '' %>" required>
+                <input type="text" name="place" placeholder="Lugar" value="<%= typeof place!='undefined' ? place : '' %>" required>
             </div>
             <button class="new">Buscar</button>
             <div class="map"></div>
