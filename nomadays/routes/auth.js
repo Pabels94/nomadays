@@ -35,11 +35,7 @@ router.get('/place', (req, res, next) => {
 
 // esto está añadido por pablo cambiar luego
 
-<<<<<<< HEAD
-router.get('/signup', (req, res, next) => {
-=======
 router.get('/register', (req, res, next) => {
->>>>>>> 6e82006eef048735ff5dffc93c140662624e8789
   res.render('auth/register');
 });
 

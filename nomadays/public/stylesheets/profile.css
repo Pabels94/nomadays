@@ -1,27 +1,10 @@
-<<<<<<< HEAD
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-=======
 html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
   }
 
 *{
-    text-decoration: none;
+    text-decoration: none !important;
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     letter-spacing: 1.5px;
@@ -171,15 +154,22 @@ html {
         }
         
         .edit p{
-            margin-top: 4px;
+            padding-top: 4px;
+            width: 160px;
+            height: 20px;
         }
         
         .edit:hover{
             border-radius: 10px;
-            border: 1.5px solid rgb(158, 84, 226);
-            color: rgb(158, 84, 226);
+            border: 1.5px solid #00D76D;
+            color: #00D76D;
             background: #fff;
         }
+
+        .edit > p:hover{
+            font-weight: 500 !important;
+        }
+
         
         .hobbies{
         
@@ -220,7 +210,7 @@ html {
     }
 
     .first{
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
 
     .second{
@@ -253,7 +243,7 @@ html {
         border: 1.5px solid rgb(243, 66, 66);
         color: rgb(243, 66, 66);
         background: #fff;
-        margin-bottom: 15px;
+        margin: 10px 0 20px 0;
     }
 
     .two:hover{
@@ -400,12 +390,37 @@ html {
         border: 1.5px solid #00D76D;
         margin: 0 0 120px 47%;
     }
-    
-    .new:hover{
-       
+
+    .new-edit{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 90px;
+        height: 35px;
+        font-weight: 500;
+        border-radius: 10px;
         border: 1.5px solid rgb(158, 84, 226);
         color: rgb(158, 84, 226);
         background: #fff;
+        border: 1.5px solid rgb(158, 84, 226);
+        margin: 0 0 20px 47%;
+    }
+
+    .new-edit:hover{
+        border-style: none;
+        color: #fff;
+        background: rgb(158, 84, 226);
+        text-decoration: none;
+    }
+
+    
+    .new:hover{
+       
+        border: 1.5px solid #00D76D;
+        color: #00D76D;
+        background: #fff;
+        text-decoration: none;
     }
 
     .myPlaces{
@@ -498,4 +513,3 @@ html {
                 height: 30px;
                 margin: 10px;
                 }
->>>>>>> 61c1095ef6a00fa84bd11ad1d0020fd359e55cae

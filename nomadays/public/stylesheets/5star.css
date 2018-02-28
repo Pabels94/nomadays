@@ -3,6 +3,7 @@
     border-style: none;
     left: 500px;
     padding:0;
+    margin-top: 15px;
   }
   
   .rate-area:not(:checked) > input {

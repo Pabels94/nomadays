@@ -109,7 +109,7 @@ html {
     .file{
         display: flex;
         flex-flow: row nowrap;
-        margin: 5% 5%;
+        margin: 9% 5% 9% 5%;
     }
 
     .rating{
@@ -130,7 +130,7 @@ html {
             display: flex;
             flex-flow: column nowrap;
             padding: 0;
-            margin-top: 50px;
+            margin-top: 25px;
             margin-left: 80px;
             width: 1700px;
             
