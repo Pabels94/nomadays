@@ -389,6 +389,7 @@ html {
         background: #00D76D;
         border: 1.5px solid #00D76D;
         margin: 0 0 120px 47%;
+        
     }
 
     .new-edit{
@@ -421,6 +422,7 @@ html {
         color: #00D76D;
         background: #fff;
         text-decoration: none;
+        outline: inherit;
     }
 
     .myPlaces{

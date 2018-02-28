@@ -82,7 +82,7 @@ padre{
 
         .frase-principal{
             /* background: rgba(175, 238, 238, 0.3); */
-            margin-top: 45px;
+            margin-top: 50px;
             display: flex;
             flex-flow: column nowrap;
             align-items: center;
@@ -222,7 +222,7 @@ padre{
                 border-radius: 4px;
                 background: rgba(32, 32, 32, 0.7);
                 border-style: none;
-                margin-bottom: 70px;
+                margin-bottom: 120px;
             }
 
                 .submit p{

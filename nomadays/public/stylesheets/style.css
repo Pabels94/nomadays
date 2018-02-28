@@ -253,6 +253,10 @@ padre{
               margin-bottom: 108px;
           }
 
+          .registrarse p{
+              margin-top: 15px;
+          }
+
           .registrarse a{
               margin-left: 10px;
               color: #fff;
