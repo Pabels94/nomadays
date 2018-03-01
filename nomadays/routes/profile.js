@@ -8,14 +8,22 @@ const cityRepository = require('../repository/cityRepository');
 
 
 router.get('/', (req, res, next) => {
-  Trip.find({})
-    .sort({ dateInitial: 'asc' })
-    .then((trips) => {
-      res.render('profile/profile', {
-        trips,
-      });
-    });
-});
+  res.render('profile/profile')
+})
+
+router.get('/addPlace', (req, res, next) => {
+  res.render('profile/addPlace')
+})
+
+// router.get('/', (req, res, next) => {
+//   Trip.find({})
+//     .sort({ dateInitial: 'asc' })
+//     .then((trips) => {
+//       res.render('profile/profile', {
+//         trips,
+//       });
+//     });
+// });
 
 router.get('/addTrip', (req, res, next) => {
   City.find({})

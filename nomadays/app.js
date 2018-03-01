@@ -35,11 +35,11 @@ mongoose.Promise = global.Promise;
 const app = express();
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost/nomadays', {
-  useMongoClient: true,
-})
-  .then(() => console.log('MongoDb connected...'))
-  .catch(err => console.log(err));
+// mongoose.connect('mongodb://localhost/nomadays', {
+//   useMongoClient: true,
+// })
+//   .then(() => console.log('MongoDb connected...'))
+//   .catch(err => console.log(err));
 
 // view engine setup
 app.use(expressLayouts);
