@@ -91,30 +91,43 @@
     
 
     <div class="tittle">MIS LUGARES</div>
+
     <div class="myPlaces">
-        
+    <% if (typeof(trips) != 'undefined') { %>
         <div class="place">
             <div class="field">Lugar</div>
-            <div class="placeSite first">Razzmatazz</div>
-            <div class="placeSite first">Luri Sushi</div>
+            <% places.forEach(function(place) { %>
+                <div class="placeSite first"><%- place.name %></div>
+            <% }); %>
         </div>
         <div class="place">
             <div class="field">Latitud</div>
-            <div class="Coordinates first">41.39751164405828</div>
-            <div class="Coordinates first">41.3979347</div>
+            <% places.forEach(function(place) { %>
+                <div class="Coordinates first"><%- place.location.coordinates[0] %></div>
+            <% }); %>            
         </div>
         <div class="place">
-            <div class="field">Longitud</div>
-            <div class="Coordinates first">2.1904850006103516</div>
-            <div class="Coordinates first">2.131418599999961</div>
+            <div class="field">Longitud</div
+            <% places.forEach(function(place) { %>>
+            <div class="Coordinates first"><%- place.location.coordinates[1] %></div>
+            <% }); %>
         </div>
-    
-        <div class="place second">
-            <div class="field"></div>
-            <button class="delete first two">Eliminar</button>
-            <button class="delete first two">Eliminar</button>
-        </div>
+    <% } %>        
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <div class="box">

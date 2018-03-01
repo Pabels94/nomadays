@@ -70,10 +70,43 @@
         console.log('Browser does not support geolocation.');
       }
 
+      // Evento de enviar
       document.getElementById('geocode').addEventListener('submit', function(event) {
         event.preventDefault();
         geocodeAddress()
       });
+      
+      // Evento de guardar en la base de datos
+    document.getElementById('form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const restInfo = {
+        name: $('#name').val(),
+        description: $('#description').val(),
+        location: {
+          type: 'Point',
+          coordinates: [$('#longitude').val(), $('#latitude').val()]
+      }};
+      $.ajax({
+        url: "http://localhost:3000/profile/addPlace",
+        crossDomain: true,
+        contentType: 'application/json',
+        dataType: 'json',
+        method: 'POST',
+        data: JSON.stringify(restInfo),
+        success: function(restaurants) {
+          deleteMarkers();
+          getRestaurant()
+        },
+        error: function(error) {
+          console.log('error', error.responseText); 
+        }
+      });
+    });
+
+
+
+
+
 
       function geocodeAddress() {
         var address = document.getElementById('address').value;

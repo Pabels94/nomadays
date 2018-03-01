@@ -4,26 +4,54 @@ const router = express.Router();
 
 const Trip = require('../models/Trip');
 const City = require('../models/City');
-const cityRepository = require('../repository/cityRepository');
+const Place = require('../models/Place');
+
+
+router.get('/addPlace', (req, res, next) => {
+  res.render('profile/addPlace');
+});
+
+router.post('/addPlace', (req, res, next) => {
+  const place = req.body;
+  Place.create(place)
+    .then((value) => {
+      res.status(200);
+      res.json(value);
+    })
+    .catch((err) => {
+      res.status(500);
+      res.json(err);
+    });
+});
+
+router.get('/editPlace/:id', (req, res, next) => {
+  Place.findOne({
+    _id: req.params.id,
+  })
+    .then((place) => {
+      res.render('profile/editPlace', {
+        place,
+      });
+    });
+});
 
 
 router.get('/', (req, res, next) => {
-  res.render('profile/profile')
-})
+  // res.render('profile/profile', { trips });
 
-router.get('/addPlace', (req, res, next) => {
-  res.render('profile/addPlace')
-})
+  Trip.find({})
+    .sort({ dateInitial: 'asc' })
+    .then((trips) => {
+      Place.find({})
+        .sort({ name: 'asc' })
+        .then((places) => {
+          res.render('profile/profile', { trips,
+            places,
+          });
+        });
+    });
+});
 
-// router.get('/', (req, res, next) => {
-//   Trip.find({})
-//     .sort({ dateInitial: 'asc' })
-//     .then((trips) => {
-//       res.render('profile/profile', {
-//         trips,
-//       });
-//     });
-// });
 
 router.get('/addTrip', (req, res, next) => {
   City.find({})
