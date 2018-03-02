@@ -38,7 +38,6 @@ router.get('/editPlace/:id', (req, res, next) => {
 
 router.get('/', (req, res, next) => {
   // res.render('profile/profile', { trips });
-
   Trip.find({})
     .sort({ dateInitial: 'asc' })
     .then((trips) => {
@@ -63,7 +62,7 @@ router.get('/addTrip', (req, res, next) => {
     });
 });
 
-router.post('/addTrip/', (req, res, next) => {
+router.post('/addTrip', (req, res, next) => {
   const errors = [];
   if (!req.body.originCity) {
     errors.push({ text: 'Please, add a origin city' });

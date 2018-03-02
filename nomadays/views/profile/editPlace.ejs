@@ -1,0 +1,131 @@
+<head>
+   
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+    <link rel="stylesheet" href="/stylesheets/5star.css">
+    <link rel="stylesheet" href="/stylesheets/place.css">
+</head>
+    <div class="padre">
+    <header class= "header">
+        <div class= "menu">
+            <div class="logo">
+                <a href="/">
+                    <img src="/img/login/logotipo-white.png" alt= "" >
+                </a>
+            </div>
+            <div class="descarga">
+                <a  target="_blank" href="https://www.behance.net/gallery/43584021/NOMADAYS-app" class="descargar">Descarga la app</a>
+            </div>
+            <div class="hamburguesa">
+                <a href="/home">
+                    <img src="/img/login/hamburguer-menu.png" alt= "" >
+                </a>
+            </div>
+        </div>
+        <div class="frase-principal">
+            <h1>Restaurante</h1>
+        </div>
+    </header>
+    <form action="/profile/updateTrip/<%- place.id %>?_method=PUT" method="post">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="file">
+            <div class="rating">
+                <img class="restaurant" src="/img/login/food-place.jpg" alt= "" >
+                <ul class="rate-area">
+                        <input type="radio" id="5-star" name="rating" value="5" /><label for="5-star" title="Amazing">5 stars</label>
+                        <input type="radio" id="4-star" name="rating" value="4" /><label for="4-star" title="Good">4 stars</label>
+                        <input type="radio" id="3-star" name="rating" value="3" /><label for="3-star" title="Average">3 stars</label>
+                        <input type="radio" id="2-star" name="rating" value="2" /><label for="2-star" title="Not Good">2 stars</label>
+                        <input type="radio" id="1-star" name="rating" value="1" /><label for="1-star" title="Bad">1 star</label>
+                    </ul>
+            </div>
+            <div class="info">
+            
+                <div class="first name"><%- place.name %></div>
+                <script>
+                    var latitude = JSON.parse('<%- place.location.coordinates[1] %>');
+                    var longitude = JSON.parse('<%- place.location.coordinates[0] %>');        
+                </script>
+            </div>
+            <div class="description">
+                    <h3 class="tittle">Descripción</h3>
+                    <p><%- place.description %></p>
+            </div>
+        
+                    
+        </div>
+    </form>
+    <div class="photos">
+
+    </div>
+    <div id="map" class="map">
+        
+    </div>
+    <footer class="footer">
+        <div class="info">
+            <a  href="" class="contacto">Contacto</a>
+            <a  href="" class="condiciones">Condiciones legales</a>
+            <a  href=""class="work">Trabaja con nosotros</a>
+        </div>
+        <div class="terminos"><p>© Nomadays  S.L. All rights reserved</p></div>
+        <div class="rrss">
+                
+                        <a class="ig" href="login.html">
+                            <img src="/img/login/icono1.png" alt= "" >
+                        </a>
+                    
+    
+                
+                            <a class="pn" href="login.html">
+                                <img src="/img/login/icono2.png" alt= "" >
+                            </a>
+                        
+                        
+                        
+                        <a class="fb" href="login.html">
+                                <img src="/img/login/icono3.png" alt= "" >
+                        </a>    
+    
+        </div>
+        
+    </footer>
+    </div>
+
+    <%- contentFor('styles') %>
+    <style>
+      #map {
+        height: 300px;
+      }
+    </style>
+    
+  <%- contentFor('scripts') %>
+  <script>
+
+
+
+
+
+
+
+
+    $(document).ready(function(){
+        var geocoder;
+        var map; 
+        initialize();
+        function initialize() {
+            geocoder = new google.maps.Geocoder();
+            var latlng = new google.maps.LatLng(latitude, longitude); 
+            map = new google.maps.Map(document.getElementById('map'), mapOptions);
+            var mapOptions = {
+                zoom: 20,
+                center: latlng
+            }
+            var marker = new google.maps.Marker({
+                map: map,
+                position: latlng,
+            });
+            map = new google.maps.Map(document.getElementById('map'), mapOptions);
+            marker.setMap(map);
+        }
+    });
+  </script>

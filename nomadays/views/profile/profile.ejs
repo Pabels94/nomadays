@@ -80,6 +80,8 @@
                         <a class="new" href="/profile/updateTrip/<%- trip.id %>">Edit</a>
                     <% }); %>
                 </div>
+
+                
         <% } %>
 
 
@@ -103,7 +105,7 @@
         <div class="place">
             <div class="field">Latitud</div>
             <% places.forEach(function(place) { %>
-                <div class="Coordinates first"><%- place.location.coordinates[0] %></div>
+                <div class="Coordinates first"><%- place.location.coordinates[0] %></div>                
             <% }); %>            
         </div>
         <div class="place">
@@ -112,23 +114,17 @@
             <div class="Coordinates first"><%- place.location.coordinates[1] %></div>
             <% }); %>
         </div>
+
+        <div class="place">
+                <div class="field">Longitud</div>
+                <% places.forEach(function(place) { %>
+                    <a href="/profile/editPlace/<%- place.id %>">Edit Place</a>
+                <% }); %>
+            </div>
+
+        
     <% } %>        
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <div class="box">
         <a class="button" href="#popup1">Nuevo</a>
