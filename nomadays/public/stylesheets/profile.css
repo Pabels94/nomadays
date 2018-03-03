@@ -170,6 +170,7 @@ html {
             font-weight: 500 !important;
         }
 
+
         
         .hobbies{
         
@@ -392,7 +393,30 @@ html {
         
     }
 
-    .new-edit{
+    .delete{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 95px;
+        height: 35px;
+        font-weight: 500;
+        border-radius: 10px;
+        border: 1.5px solid rgb(226, 84, 84);
+        color: rgb(226, 84, 84);
+        background: #fff;
+        border: 1.5px solid rgb(226, 84, 84);
+        margin: 0 0 20px 47%;
+    }
+
+    .delete:hover{
+        border-style: none;
+        color: #fff;
+        background: rgb(226, 84, 84);
+        text-decoration: none;
+    }
+
+    .show{
         display: flex;
         flex-flow: row nowrap;
         justify-content: center;
@@ -408,7 +432,7 @@ html {
         margin: 0 0 20px 47%;
     }
 
-    .new-edit:hover{
+    .show:hover{
         border-style: none;
         color: #fff;
         background: rgb(158, 84, 226);

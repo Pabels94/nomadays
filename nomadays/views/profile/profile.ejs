@@ -1,168 +1,167 @@
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Rokkitt:200,300,400" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/normalize.css">
-    <link rel="stylesheet" href="/stylesheets/profile.css">
-</head>
-
-<div class="padre">
-
-    <header class= "header">
-        
-        <div class= "menu">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="/img/login/logotipo.png" alt= "" >
-                </a>
-            </div>
-            <div class="descarga">
-                <a target="_blank" href="https://www.behance.net/gallery/43584021/NOMADAYS-app" class="descargar">Descarga la app</a>
-            </div>
-            <div class="login">
-                <% if (locals.user) { %>
-                    <a href="/auth/login" class="login"><%= locals.user.name %></a>
-                <% } else {  %> 
-                    <a href="/auth/login" class="login">Entrar</a>
-                <% } %>    
-                
-            </div>
-            <div class="hamburguesa">
-                <a href="index.html">
-                    <img src="/img/login/hamburguer-menu-black.png" alt= "" >
-                </a>
-            </div>
-        </div>
-        <div class="profileInfo">
-                <div class="user">
-                    <img class="picture" src="/img/login/profile.png" alt= "" >
-                    <button class="edit"><p>Edita tu perfil</p></button>
-                </div>
-                <div class="aboutMe">
-                    <div class="name">Pablo Hermoso</div>
-                    <div class="email">pablohermosog@gmail.com</div>
-                    <button class="add"><p>¿A qué esperas? Completa tu perfil</p></button>
-                </div>
-            </div>
-                <p class="hobbies">"Me considero una persona aventurera, que está en constante busqueda de nuevas experiencias alejadas del turismo, donde poder ser yo mismo, conocer nuevas culturas y recorrer el mundo con lo básico, solos mi cámara y yo"</p>
-    </header>
-    <div class="tittle">MIS VIAJES</div>
-    <div class="myTrips">
-        <% if (typeof(trips) != 'undefined') { %>
-                <div class="trip">
-                    <div class="field">Origen</div>
-                    <% trips.forEach(function(trip) { %>
-                        <div class="origen first"><%- trip.originCity %></div>
-                    <% }); %>
-                </div>
-                <div class="trip">
-                    <div class="field">Destino</div>
-                    <% trips.forEach(function(trip) { %>
-                        <div class="destino first"><%- trip.destinationCity %></div>
-                    <% }); %>
-                </div>
-
-                <div class="trip">
-                    <div class="field">Salida</div>
-                    <% trips.forEach(function(trip) { %>
-                        <div class="destino first"><%= moment(trip.dateInitial).format('YYYY-MM-DD') %></div>
-                    <% }); %>
-                </div>
-                <div class="trip">
-                    <div class="field">Llegada</div>
-                    <% trips.forEach(function(trip) { %>
-                        <div class="destino first"><%= moment(trip.dateEnd).format('YYYY-MM-DD') %></div>
-                    <% }); %>
-                </div>
-
-                <div class="trip second">
-                    <div class="field"></div>
-                    <% trips.forEach(function(trip) { %>
-                        <a class="new" href="/profile/updateTrip/<%- trip.id %>">Edit</a>
-                    <% }); %>
-                </div>
-
-                
-        <% } %>
-
-
-    </div>
-
-
-    <a class="new" href="/profile/addTrip">Nuevo</a>
-
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Rokkitt:200,300,400" rel="stylesheet">
+        <link rel="stylesheet" href="/stylesheets/normalize.css">
+        <link rel="stylesheet" href="/stylesheets/profile.css">
+    </head>
     
-
-    <div class="tittle">MIS LUGARES</div>
-
-    <div class="myPlaces">
-    <% if (typeof(trips) != 'undefined') { %>
-        <div class="place">
-            <div class="field">Lugar</div>
-            <% places.forEach(function(place) { %>
-                <div class="placeSite first"><%- place.name %></div>
-            <% }); %>
+    <div class="padre">
+    
+        <header class= "header">
+            
+            <div class= "menu">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="/img/login/logotipo.png" alt= "" >
+                    </a>
+                </div>
+                <div class="descarga">
+                    <a target="_blank" href="https://www.behance.net/gallery/43584021/NOMADAYS-app" class="descargar">Descarga la app</a>
+                </div>
+                <div class="login">
+                    <% if (locals.user) { %>
+                        <a href="/auth/login" class="login"><%= locals.user.name %></a>
+                    <% } else {  %> 
+                        <a href="/auth/login" class="login">Entrar</a>
+                    <% } %>    
+                    
+                </div>
+                <div class="hamburguesa">
+                    <a href="index.html">
+                        <img src="/img/login/hamburguer-menu-black.png" alt= "" >
+                    </a>
+                </div>
+            </div>
+            <div class="profileInfo">
+                    <div class="user">
+                        <img class="picture" src="/img/login/profile.png" alt= "" >
+                        <button class="edit"><p>Edita tu perfil</p></button>
+                    </div>
+                    <div class="aboutMe">
+                        <div class="name">Pablo Hermoso</div>
+                        <div class="email">pablohermosog@gmail.com</div>
+                        <button class="add"><p>¿A qué esperas? Completa tu perfil</p></button>
+                    </div>
+                </div>
+                    <p class="hobbies">"Me considero una persona aventurera, que está en constante busqueda de nuevas experiencias alejadas del turismo, donde poder ser yo mismo, conocer nuevas culturas y recorrer el mundo con lo básico, solos mi cámara y yo"</p>
+        </header>
+        <div class="tittle">MIS VIAJES</div>
+        <div class="myTrips">
+            <% if (typeof(trips) != 'undefined') { %>
+                    <div class="trip">
+                        <div class="field">Origen</div>
+                        <% trips.forEach(function(trip) { %>
+                            <div class="origen first"><%- trip.originCity %></div>
+                        <% }); %>
+                    </div>
+                    <div class="trip">
+                        <div class="field">Destino</div>
+                        <% trips.forEach(function(trip) { %>
+                            <div class="destino first"><%- trip.destinationCity %></div>
+                        <% }); %>
+                    </div>
+    
+                    <div class="trip">
+                        <div class="field">Salida</div>
+                        <% trips.forEach(function(trip) { %>
+                            <div class="destino first"><%= moment(trip.dateInitial).format('YYYY-MM-DD') %></div>
+                        <% }); %>
+                    </div>
+                    <div class="trip">
+                        <div class="field">Llegada</div>
+                        <% trips.forEach(function(trip) { %>
+                            <div class="destino first"><%= moment(trip.dateEnd).format('YYYY-MM-DD') %></div>
+                        <% }); %>
+                    </div>
+    
+                    <div class="trip second">
+                        <div class="field"></div>
+                        <% trips.forEach(function(trip) { %>
+                            <a class="show" href="/profile/updateTrip/<%- trip.id %>">Editar</a>
+                        <% }); %>
+                    </div>
+    
+                    <div class="trip second">
+                        <div class="field"></div>
+                        <% trips.forEach(function(trip) { %>
+                            <a class="delete" href="/profile/updateTrip/<%- trip.id %>">Eliminar</a>
+                        <% }); %>
+                    </div>
+    
+                    
+            <% } %>
+    
+    
         </div>
-        <div class="place">
-            <div class="field">Latitud</div>
-            <% places.forEach(function(place) { %>
-                <div class="Coordinates first"><%- place.location.coordinates[0] %></div>                
-            <% }); %>            
-        </div>
-        <div class="place">
-            <div class="field">Longitud</div
-            <% places.forEach(function(place) { %>>
-            <div class="Coordinates first"><%- place.location.coordinates[1] %></div>
-            <% }); %>
-        </div>
-
-        <div class="place">
-                <div class="field">Longitud</div>
+    
+    
+        <a class="new" href="/profile/addTrip">Nuevo</a>
+    
+        
+    
+        <div class="tittle">MIS LUGARES</div>
+    
+        <div class="myPlaces">
+        <% if (typeof(trips) != 'undefined') { %>
+            <div class="place">
+                <div class="field">Lugar</div>
                 <% places.forEach(function(place) { %>
-                    <a href="/profile/editPlace/<%- place.id %>">Edit Place</a>
+                    <div class="placeSite first"><%- place.name %></div>
                 <% }); %>
             </div>
-
-        
-    <% } %>        
-    </div>
-
-    <div class="box">
-        <a class="button" href="#popup1">Nuevo</a>
-    </div>
-        
-    <div id="popup1" class="overlay">
-        <div class="popup"> 
-            <a class="close" href="#">&times;</a>
-            <div class="content">
-                <input type="text" name="name" placeholder="Lugar" value="<%= typeof place!='undefined' ? place : '' %>" required>
+            <div class="place">
+                <div class="field">Latitud</div>
+                <% places.forEach(function(place) { %>
+                    <div class="Coordinates first"><%- place.location.coordinates[0] %></div>                
+                <% }); %>            
             </div>
-            <button class="new">Buscar</button>
-            <div class="map"></div>
+            <div class="place">
+                <div class="field">Longitud</div
+                <% places.forEach(function(place) { %>>
+                <div class="Coordinates first"><%- place.location.coordinates[1] %></div>
+                <% }); %>
+            </div>
+    
+            <div class="place">
+                    <div class="field">Longitud</div>
+                    <% places.forEach(function(place) { %>
+                        <a href="/profile/editPlace/<%- place.id %>">Edit Place</a>
+                    <% }); %>
+                </div>
+    
+            
+        <% } %>        
         </div>
     </div>
-
-    <footer class="footer">
-            <div class="info">
-                <a  href="" class="contacto">Contacto</a>
-                <a  href="" class="condiciones">Condiciones legales</a>
-                <a  href=""class="work">Trabaja con nosotros</a>
-            </div>
-            <div class="terminos"><p>© Nomadays  S.L. All rights reserved</p></div>
-            <div class="rrss">
     
-                <a class="ig" href="login.html">
-                    <img src="/img/login/icono1.png" alt= "" >
-                </a>
-
-                <a class="pn" href="login.html">
-                    <img src="/img/login/icono2.png" alt= "" >
-                </a>
-
-                <a class="fb" href="login.html">
-                        <img src="/img/login/icono3.png" alt= "" >
-                </a>
+        <div class="box">
+            <a class="new" href="/profile/addPlace">Nuevo</a>
+        </div>
+            
+        
     
-            </div>
+        <footer class="footer">
+                <div class="info">
+                    <a  href="" class="contacto">Contacto</a>
+                    <a  href="" class="condiciones">Condiciones legales</a>
+                    <a  href=""class="work">Trabaja con nosotros</a>
+                </div>
+                <div class="terminos"><p>© Nomadays  S.L. All rights reserved</p></div>
+                <div class="rrss">
+        
+                    <a class="ig" href="login.html">
+                        <img src="/img/login/icono1.png" alt= "" >
+                    </a>
     
-        </footer>
-      </div>
+                    <a class="pn" href="login.html">
+                        <img src="/img/login/icono2.png" alt= "" >
+                    </a>
+    
+                    <a class="fb" href="login.html">
+                            <img src="/img/login/icono3.png" alt= "" >
+                    </a>
+        
+                </div>
+        
+            </footer>
+          </div>

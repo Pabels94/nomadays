@@ -4,10 +4,6 @@ const passport = require('passport');
 
 const router = express.Router();
 
-
-
-
-
 // Importamos el modelo de usuario
 const User = require('../models/User');
 
@@ -95,7 +91,7 @@ router.post('/register', (req, res, next) => {
 router.get('/logout', (req, res, next) => {
   req.logout();
   req.flash('success-message', 'You are logged out');
-  res.redirect('/users/login');
+  res.redirect('/auth/login');
 });
 
 module.exports = router;
