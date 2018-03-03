@@ -2,16 +2,18 @@ const express = require('express');
 
 const router = express.Router();
 
+const { ensureAuthenticated } = require('../helpers/auth');
+
 const Trip = require('../models/Trip');
 const City = require('../models/City');
 const Place = require('../models/Place');
 
 
-router.get('/addPlace', (req, res, next) => {
+router.get('/addPlace', ensureAuthenticated, (req, res, next) => {
   res.render('profile/addPlace');
 });
 
-router.post('/addPlace', (req, res, next) => {
+router.post('/addPlace', ensureAuthenticated, (req, res, next) => {
   const place = req.body;
   Place.create(place)
     .then((value) => {
@@ -24,7 +26,7 @@ router.post('/addPlace', (req, res, next) => {
     });
 });
 
-router.get('/editPlace/:id', (req, res, next) => {
+router.get('/editPlace/:id', ensureAuthenticated, (req, res, next) => {
   Place.findOne({
     _id: req.params.id,
   })
@@ -36,7 +38,7 @@ router.get('/editPlace/:id', (req, res, next) => {
 });
 
 
-router.get('/', (req, res, next) => {
+router.get('/', ensureAuthenticated, (req, res, next) => {
   // res.render('profile/profile', { trips });
   Trip.find({})
     .sort({ dateInitial: 'asc' })
@@ -52,7 +54,7 @@ router.get('/', (req, res, next) => {
 });
 
 
-router.get('/addTrip', (req, res, next) => {
+router.get('/addTrip', ensureAuthenticated, (req, res, next) => {
   City.find({})
     .sort({ name: 'asc' })
     .then((cities) => {
@@ -62,7 +64,7 @@ router.get('/addTrip', (req, res, next) => {
     });
 });
 
-router.post('/addTrip', (req, res, next) => {
+router.post('/addTrip', ensureAuthenticated, (req, res, next) => {
   const errors = [];
   if (!req.body.originCity) {
     errors.push({ text: 'Please, add a origin city' });
@@ -102,7 +104,7 @@ router.post('/addTrip', (req, res, next) => {
   }
 });
 
-router.get('/updateTrip/:id', (req, res, next) => {
+router.get('/updateTrip/:id', ensureAuthenticated, (req, res, next) => {
   City.find({})
     .then((cities) => {
       Trip.findOne({
@@ -116,7 +118,7 @@ router.get('/updateTrip/:id', (req, res, next) => {
     });
 });
 
-router.put('/updateTrip/:id', (req, res, next) => {
+router.put('/updateTrip/:id', ensureAuthenticated, (req, res, next) => {
   Trip.findOne({
     _id: req.params.id,
   })
@@ -133,24 +135,22 @@ router.put('/updateTrip/:id', (req, res, next) => {
 });
 
 
-router.delete('/deleteTrip/:id', (req, res, next) => {
+router.delete('/deleteTrip/:id', ensureAuthenticated, (req, res, next) => {
   Trip.remove({ _id: req.params.id })
     .then(() => {
       res.redirect(req.get('referer'));
-      //res.redirect('/profile');
       console.log('Trip deleted');
-    })
-})
+    });
+});
 
 
-router.delete('/deletePlace/:id', (req, res, next) => {
+router.delete('/deletePlace/:id', ensureAuthenticated, (req, res, next) => {
   Place.remove({ _id: req.params.id })
     .then(() => {
       res.redirect(req.get('referer'));
-      //res.redirect('/profile');
       console.log('Place deleted');
-    })
-})
+    });
+});
 
 router.get('/editProfile', (req, res, next) => {
   res.render('profile/editProfile');
