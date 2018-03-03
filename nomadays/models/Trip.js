@@ -23,6 +23,41 @@ const TripSchema = new Schema({
     required: true,
   },
 
+  estimatedPrice: {
+    type: Number,
+    required: false,
+  },
+
+  travelStyle: {
+    type: Number,
+    required: false,
+  },
+
+  accommodationRange: {
+    type: Number,
+    required: false,
+  },
+
+  transportRange: {
+    type: Number,
+    required: false,
+  },
+
+  foodRange: {
+    type: Number,
+    required: false,
+  },
+
+  cultureRange: {
+    type: Number,
+    required: false,
+  },
+
+  entertainmentRange: {
+    type: Number,
+    required: false,
+  },
+
   userId: {
     type: Schema.Types.ObjectId,
     ref: 'User',

@@ -1,4 +1,9 @@
-
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Rokkitt:200,300,400" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/normalize.css">
+  <link rel="stylesheet" href="/stylesheets/addPlace.css">
+</head>
 
 <div class="container-fluid">
     <div id="map" ></div>
@@ -8,10 +13,10 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Geocode</h5>
+            <h5 class="card-title">Lugar</h5>
             <form id="geocode">
-              <input id="address" type="" name="address" placeholder="address">
-              <input type="submit" name="">
+              <input id="address" type="" name="address" placeholder="dirección">
+              <input class= "search" type="submit" name="Buscar" value="Buscar">
             </form>
           </div>
         </div>
@@ -21,20 +26,14 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Subir restaurant</h5>
+            <h5 class="card-title">Subir localización</h5>
             <form id="form" >
-              <label>Name:</label>
-              <input id="name" type="" name="name" placeholder="Name">
-              <label>Description:</label>
-              <input id="description" type="" name="description" placeholder="Description">
-              <label>Address</label>
-              <input id="latitude" type="" name="latitude" placeholder="Latitude">
-              <input id="longitude" type="" name="longitude" placeholder="Longitude">
-              <input type="submit" name="" value="guardar">
+              <label>Descripción:</label>
+              <input class="description" id="description" type="" name="description" placeholder="descripción">
+              <input class= "search" type="submit" name="" value="Guardar">
             </form>
           </div>
         </div>
-        
       </div>
     </div>
   
@@ -49,6 +48,8 @@
   <script>
     $(document).ready(function(){
       var map;
+      var latitude;
+      var longitude;
       var markers = [];
       var geocoder = new google.maps.Geocoder();
       var center = {}
@@ -80,11 +81,11 @@
     document.getElementById('form').addEventListener('submit', function(event) {
       event.preventDefault();
       const restInfo = {
-        name: $('#name').val(),
+        name: $('#address').val(),
         description: $('#description').val(),
         location: {
           type: 'Point',
-          coordinates: [$('#longitude').val(), $('#latitude').val()]
+          coordinates: [longitude, latitude]
       }};
       $.ajax({
         url: "http://localhost:3000/profile/addPlace",
@@ -94,8 +95,7 @@
         method: 'POST',
         data: JSON.stringify(restInfo),
         success: function(restaurants) {
-          deleteMarkers();
-          getRestaurant()
+          window.location = '/profile/';
         },
         error: function(error) {
           console.log('error', error.responseText); 
@@ -112,8 +112,8 @@
               map: map,
               position: results[0].geometry.location
             });
-            document.getElementById('latitude').value = results[0].geometry.location.lat();
-            document.getElementById('longitude').value = results[0].geometry.location.lng();
+            latitude = results[0].geometry.location.lat();
+            longitude = results[0].geometry.location.lng();
           } else {
             alert('Geocode was not successful for the following reason: ' + status);
           }

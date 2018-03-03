@@ -92,6 +92,7 @@ router.post('/addTrip', (req, res, next) => {
       destinationCity: req.body.destinationCity,
       dateInitial: new Date(req.body.dateInitial),
       dateEnd: new Date(req.body.dateEnd),
+      
       userId: '5a898fff6bad38205ccf19a1',
     };
     Trip.create(newTrip)
