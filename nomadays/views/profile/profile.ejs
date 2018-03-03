@@ -11,7 +11,7 @@
             
             <div class= "menu">
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="/">
                         <img src="/img/login/logotipo.png" alt= "" >
                     </a>
                 </div>
@@ -20,9 +20,9 @@
                 </div>
                 <div class="login">
                     <% if (locals.user) { %>
-                        <a href="/profile" class="login"><%= locals.user.name %></a>
+                        <a href="/auth/login" class="login"><%= locals.user.name %></a>
                     <% } else {  %> 
-                        <a href="/profile" class="login">Entrar</a>
+                        <a href="/auth/login" class="login">Entrar</a>
                     <% } %>    
                     
                 </div>
@@ -80,14 +80,16 @@
                             <a class="show" href="/profile/updateTrip/<%- trip.id %>">Editar</a>
                         <% }); %>
                     </div>
-    
+                    
                     <div class="trip second">
                         <div class="field"></div>
                         <% trips.forEach(function(trip) { %>
-                            <a class="delete" href="/profile/updateTrip/<%- trip.id %>">Eliminar</a>
+                            <form method="post" action="/profile/deleteTrip/<%- trip.id %>?_method=DELETE">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button class="delete" type="submit" >Eliminar</a>
+                            </form>
                         <% }); %>
                     </div>
-    
                     
             <% } %>
     
@@ -116,18 +118,28 @@
                 <% }); %>            
             </div>
             <div class="place">
-                <div class="field">Longitud</div
-                <% places.forEach(function(place) { %>>
-                <div class="Coordinates first"><%- place.location.coordinates[1] %></div>
+                <div class="field">Longitud</div>
+                <% places.forEach(function(place) { %>
+                    <div class="Coordinates first"><%- place.location.coordinates[1] %></div>
                 <% }); %>
             </div>
     
             <div class="place">
-                    <div class="field">Longitud</div>
+                    <div class="field second"></div>
                     <% places.forEach(function(place) { %>
-                        <a href="/profile/editPlace/<%- place.id %>">Edit Place</a>
+                        <a class="show-place" href="/profile/editPlace/<%- place.id %>">Ver</a>
                     <% }); %>
-                </div>
+            </div>
+
+            <div class="place">
+                <div class="field second"></div>
+                <% places.forEach(function(place) { %>
+                    <form method="post" action="/profile/deletePlace/<%- place.id %>?_method=DELETE">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button class="delete" type="submit">Eliminar</button>
+                    </form>
+                <% }); %>
+            </div>
     
             
         <% } %>        

@@ -103,13 +103,16 @@ router.post('/addTrip', (req, res, next) => {
 });
 
 router.get('/updateTrip/:id', (req, res, next) => {
-  Trip.findOne({
-    _id: req.params.id,
-  })
-    .then((trip) => {
-      res.render('profile/updateTrip', {
-        trip,
-      });
+  City.find({})
+    .then((cities) => {
+      Trip.findOne({
+        _id: req.params.id,
+      })
+        .then((trip) => {
+          res.render('profile/updateTrip', { cities,
+            trip,
+          });
+        });    
     });
 });
 
@@ -130,12 +133,25 @@ router.put('/updateTrip/:id', (req, res, next) => {
 });
 
 
-router.delete('/:id', (req, res, next) => {
+router.delete('/deleteTrip/:id', (req, res, next) => {
   Trip.remove({ _id: req.params.id })
     .then(() => {
+      res.redirect(req.get('referer'));
+      //res.redirect('/profile');
       console.log('Trip deleted');
     })
 })
+
+
+router.delete('/deletePlace/:id', (req, res, next) => {
+  Place.remove({ _id: req.params.id })
+    .then(() => {
+      res.redirect(req.get('referer'));
+      //res.redirect('/profile');
+      console.log('Place deleted');
+    })
+})
+
 
 module.exports = router;
 

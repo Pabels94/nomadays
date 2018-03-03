@@ -217,7 +217,7 @@ html {
     .second{
         display: flex;
         flex-flow: column nowrap;
-        margin-top: 12px;
+        margin-top: 14px;
         margin-left:1%;
         margin-right: 1%; 
     }
@@ -409,6 +409,10 @@ html {
         margin: 0 0 20px 47%;
     }
 
+    .action{
+        left:0;
+    }
+
     .delete:hover{
         border-style: none;
         color: #fff;
@@ -439,6 +443,33 @@ html {
         text-decoration: none;
     }
 
+    .action{
+        margin-left: -55px;
+    }
+
+
+    .show-place{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 90px;
+        height: 35px;
+        font-weight: 500;
+        border-radius: 10px;
+        border: 1.5px solid rgb(158, 84, 226);
+        color: rgb(158, 84, 226);
+        background: #fff;
+        border: 1.5px solid rgb(158, 84, 226);
+        margin: 0 0 20px 0;
+    }
+
+    .show-place:hover{
+        border-style: none;
+        color: #fff;
+        background: rgb(158, 84, 226);
+        text-decoration: none;
+    }
     
     .new:hover{
        

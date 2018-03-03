@@ -4,11 +4,32 @@
         <input type="hidden" name="_method" value="PUT">
         <div class="form-group">
             <label for="originCity">Origin City</label>
-            <input type="text" class="form-control" name="originCity" value="<%= trip.originCity %>">          
+            <select class="form-control" id="originCity" name="originCity" >
+                <% if (typeof(cities) != 'undefined') { %>
+                    <% cities.forEach(function(cities) { %>
+                        <% if (cities.name == trip.originCity) { %>
+                            <option value="<%- cities.name %>" selected="<%- cities.name %>"><%- cities.name %></option>
+                        <% } else { %>
+                            <option value="<%- cities.name %>"><%- cities.name %></option>
+                        <% } %>    
+                    <% }); %>
+                <% } %>
+            </select>                
+                    
         </div>
         <div class="form-group">
             <label for="destinationCity">Destination City</label>
-            <input type="text" class="form-control" name="destinationCity" value="<%= trip.destinationCity %>">          
+            <select class="form-control" id="destinationCity" name="destinationCity" selected="<%= trip.destinationCity %>">
+                <% if (typeof(cities) != 'undefined') { %>
+                    <% cities.forEach(function(cities) { %>
+                        <% if (cities.name == trip.destinationCity) { %>
+                            <option value="<%- cities.name %>" selected="<%- cities.name %>"><%- cities.name %></option>
+                        <% } else { %>
+                            <option value="<%- cities.name %>"><%- cities.name %></option>
+                        <% } %>    
+                    <% }); %>
+                <% } %>
+            </select>                           
         </div>
         <div class="form-group">
             <label for="dateInitial">Date Initial</label>

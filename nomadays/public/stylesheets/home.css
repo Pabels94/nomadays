@@ -88,6 +88,24 @@ html {
                     text-decoration: none;
                     color:#2BFF88;
                 }
+
+
+            .logout{
+                /* flex: 1 1 auto; */
+                display:flex;
+                align-self: center;
+                margin-top:10px; 
+            }
+                .logout a {
+                    margin:70px 70px 70px 0px;
+                    color:#fff;
+        
+                }
+
+                .logout a:hover{
+                    text-decoration: none;
+                    color:#2BFF88;
+                }
             .hamburguesa{
                 display: flex;
                 align-self: center; 

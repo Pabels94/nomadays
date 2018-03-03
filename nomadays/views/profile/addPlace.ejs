@@ -1,123 +1,124 @@
 <head>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Rokkitt:200,300,400" rel="stylesheet">
-  <link rel="stylesheet" href="/stylesheets/normalize.css">
-  <link rel="stylesheet" href="/stylesheets/addPlace.css">
-</head>
-
-<div class="container-fluid">
-    <div id="map" ></div>
-</div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Lugar</h5>
-            <form id="geocode">
-              <input id="address" type="" name="address" placeholder="dirección">
-              <input class= "search" type="submit" name="Buscar" value="Buscar">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Subir localización</h5>
-            <form id="form" >
-              <label>Descripción:</label>
-              <input class="description" id="description" type="" name="description" placeholder="descripción">
-              <input class= "search" type="submit" name="" value="Guardar">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rokkitt:200,300,400" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+    <link rel="stylesheet" href="/stylesheets/addPlace.css">
+  </head>
   
-    <%- contentFor('styles') %>
-    <style>
-      #map {
-        height: 300px;
-      }
-    </style>
+  <div class="container-fluid">
+      <div id="map" ></div>
+  </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Lugar</h5>
+              <form id="geocode">
+                <input id="address" type="" name="address" placeholder="dirección">
+                <input class= "search" type="submit" name="Buscar" value="Buscar">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Subir localización</h5>
+              <form id="form" >
+                <label>Descripción:</label>
+                <input class="description" id="description" type="" name="description" placeholder="descripción">
+                <input class= "search" type="submit" name="" value="Guardar">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     
-  <%- contentFor('scripts') %>
-  <script>
-    $(document).ready(function(){
-      var map;
-      var latitude;
-      var longitude;
-      var markers = [];
-      var geocoder = new google.maps.Geocoder();
-      var center = {}
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-          center = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          };
-          map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: center
-          });
-          
-        }, function () {
-          console.log('Error in the geolocation service.');
-        });
-      } else {
-        console.log('Browser does not support geolocation.');
-      }
-
-      // Evento de enviar
-      document.getElementById('geocode').addEventListener('submit', function(event) {
-        event.preventDefault();
-        geocodeAddress()
-      });
-      
-      // Evento de guardar en la base de datos
-    document.getElementById('form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const restInfo = {
-        name: $('#address').val(),
-        description: $('#description').val(),
-        location: {
-          type: 'Point',
-          coordinates: [longitude, latitude]
-      }};
-      $.ajax({
-        url: "http://localhost:3000/profile/addPlace",
-        crossDomain: true,
-        contentType: 'application/json',
-        dataType: 'json',
-        method: 'POST',
-        data: JSON.stringify(restInfo),
-        success: function(restaurants) {
-          window.location = '/profile/';
-        },
-        error: function(error) {
-          console.log('error', error.responseText); 
+      <%- contentFor('styles') %>
+      <style>
+        #map {
+          height: 300px;
         }
-      });
-    });
-
-      function geocodeAddress() {
-        var address = document.getElementById('address').value;
-        geocoder.geocode({'address': address}, function(results, status) {
-          if (status === 'OK') {
-            map.setCenter(results[0].geometry.location);
-            var marker = new google.maps.Marker({
-              map: map,
-              position: results[0].geometry.location
+      </style>
+      
+    <%- contentFor('scripts') %>
+    <script>
+      $(document).ready(function(){
+        var map;
+        var latitude;
+        var longitude;
+        var markers = [];
+        var geocoder = new google.maps.Geocoder();
+        var center = {}
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function (position) {
+            center = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 15,
+              center: center
             });
-            latitude = results[0].geometry.location.lat();
-            longitude = results[0].geometry.location.lng();
-          } else {
-            alert('Geocode was not successful for the following reason: ' + status);
+            
+          }, function () {
+            console.log('Error in the geolocation service.');
+          });
+        } else {
+          console.log('Browser does not support geolocation.');
+        }
+  
+        // Evento de enviar
+        document.getElementById('geocode').addEventListener('submit', function(event) {
+          event.preventDefault();
+          geocodeAddress()
+        });
+        
+        // Evento de guardar en la base de datos
+      document.getElementById('form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const restInfo = {
+          name: $('#address').val(),
+          description: $('#description').val(),
+          location: {
+            type: 'Point',
+            coordinates: [longitude, latitude]
+        }};
+        $.ajax({
+          url: "http://localhost:3000/profile/addPlace",
+          crossDomain: true,
+          contentType: 'application/json',
+          dataType: 'json',
+          method: 'POST',
+          data: JSON.stringify(restInfo),
+          success: function(restaurants) {
+            window.location = '/profile/';
+          },
+          error: function(error) {
+            console.log('error', error.responseText); 
           }
         });
-      }
-    });
-  </script>
+      });
+  
+        function geocodeAddress() {
+          var address = document.getElementById('address').value;
+          geocoder.geocode({'address': address}, function(results, status) {
+            if (status === 'OK') {
+              map.setCenter(results[0].geometry.location);
+              var marker = new google.maps.Marker({
+                map: map,
+                position: results[0].geometry.location
+              });
+              latitude = results[0].geometry.location.lat();
+              longitude = results[0].geometry.location.lng();
+            } else {
+              alert('Geocode was not successful for the following reason: ' + status);
+            }
+          });
+        }
+      });
+    </script>
+  
