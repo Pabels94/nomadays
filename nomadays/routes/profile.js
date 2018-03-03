@@ -152,6 +152,11 @@ router.delete('/deletePlace/:id', (req, res, next) => {
     })
 })
 
+router.get('/editProfile', (req, res, next) => {
+  res.render('profile/editProfile');
+})
+
+
 
 module.exports = router;
 
