@@ -20,9 +20,9 @@
                 </div>
                 <div class="login">
                     <% if (locals.user) { %>
-                        <a href="/auth/login" class="login"><%= locals.user.name %></a>
+                        <a href="/profile" class="login"><%= locals.user.name %></a>
                     <% } else {  %> 
-                        <a href="/auth/login" class="login">Entrar</a>
+                        <a href="/profile" class="login">Entrar</a>
                     <% } %>    
                     
                 </div>

@@ -130,5 +130,12 @@ router.put('/updateTrip/:id', (req, res, next) => {
 });
 
 
+router.delete('/:id', (req, res, next) => {
+  Trip.remove({ _id: req.params.id })
+    .then(() => {
+      console.log('Trip deleted');
+    })
+})
+
 module.exports = router;
 

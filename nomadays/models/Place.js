@@ -14,11 +14,11 @@ const PlaceSchema = new Schema({
     },
     coordinates: [Number],
   },
-  userId: {
-    type: Schema.Types.ObjectId,
-    ref: 'User',
-    required: true,
-  },
+  // userId: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'User',
+  //   required: true,
+  // },
 });
 
 PlaceSchema.index({
