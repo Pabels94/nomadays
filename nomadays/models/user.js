@@ -19,6 +19,18 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  age: {
+    type: Number,
+    required: false,
+  },
+  comment: {
+    type: String,
+    required: false,
+  },
+  image: {
+    type: String,
+    required: false,
+  },
 });
 
 const User = mongoose.model('Users', UserSchema);

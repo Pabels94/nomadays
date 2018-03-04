@@ -1,12 +1,27 @@
 const express = require('express');
+const path = require('path');
+const multer = require('multer');
 
 const router = express.Router();
 
+// Control de acceso a rutas
 const { ensureAuthenticated } = require('../helpers/auth');
 
 const Trip = require('../models/Trip');
 const City = require('../models/City');
 const Place = require('../models/Place');
+const User = require('../models/User');
+
+// Multer configuration
+const storage = multer.diskStorage({
+  destination(req, file, callback) {
+    callback(null, './public/uploads/');
+  },
+  filename(req, file, callback) {
+    console.log(file);
+    callback(null, `${file.fieldname}-${Date.now()}${path.extname(file.originalname)}`);
+  },
+});
 
 
 router.get('/addPlace', ensureAuthenticated, (req, res, next) => {
@@ -38,7 +53,8 @@ router.get('/editPlace/:id', ensureAuthenticated, (req, res, next) => {
 });
 
 
-router.get('/', ensureAuthenticated, (req, res, next) => {
+// Quitamos temporalmente la comprobación de login para poder trabajar más ágilmente
+router.get('/', (req, res, next) => {
   // res.render('profile/profile', { trips });
   Trip.find({})
     .sort({ dateInitial: 'asc' })
@@ -94,7 +110,7 @@ router.post('/addTrip', ensureAuthenticated, (req, res, next) => {
       destinationCity: req.body.destinationCity,
       dateInitial: new Date(req.body.dateInitial),
       dateEnd: new Date(req.body.dateEnd),
-      
+
       userId: '5a898fff6bad38205ccf19a1',
     };
     Trip.create(newTrip)
@@ -114,7 +130,7 @@ router.get('/updateTrip/:id', ensureAuthenticated, (req, res, next) => {
           res.render('profile/updateTrip', { cities,
             trip,
           });
-        });    
+        });
     });
 });
 
@@ -152,10 +168,52 @@ router.delete('/deletePlace/:id', ensureAuthenticated, (req, res, next) => {
     });
 });
 
-router.get('/editProfile', (req, res, next) => {
-  res.render('profile/editProfile');
-})
+router.get('/editProfile/:id', (req, res, next) => {
+  User.findOne({ _id: req.params.id })
+    .then((user) => {
+      res.render('profile/editProfile', { user });
+    });
+});
 
+
+router.put('/editProfile/:id', (req, res, next) => {
+  const upload = multer({
+    storage,
+  }).single('userFile');
+  upload(req, res, (err) => {
+    console.log(req.file);
+    User.findOne({
+      _id: req.params.id,
+    }).then((user) => {
+      user.age = req.body.age;
+      user.comment = req.body.comment;
+      user.image = req.file.destination.replace('./public', '') + req.file.filename;
+      user.save()
+        .then((user) => {
+          console.log('file uploaded');
+        });
+    });
+  });
+});
+
+// subir foto del perfil
+router.put('/uploadFile/:id', (req, res, next) => {
+  const upload = multer({
+    storage,
+  }).single('userFile');
+  upload(req, res, (err) => {
+    console.log(req.file);
+    User.findOne({
+      _id: req.params.id,
+    }).then((user) => {
+      user.image = upload;
+      user.save()
+        .then((user) => {
+          console.log('file uploaded');
+        });
+    });
+  });
+});
 
 
 module.exports = router;

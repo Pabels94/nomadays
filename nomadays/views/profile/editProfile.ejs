@@ -23,25 +23,31 @@
                 </div>
             </div>
         </header>
-    
-        <div class="edit-profile">
-            <div class="user">
-                <img class="picture" src="/img/login/user-photo.jpg" alt= "" >
-                <button class="edit-photo"><p>Actualizar foto</p></button>
-            </div>
-            <div class="personal-info">
-                <div class="first name">Pablo Hermoso</div>
-                <div class="first email">pablohermosog@gmail.com</div>  
-                <div class="age">Edad:
-                    <input class= " ages" type="number" name="age" required placeholder="Opcional">
+        <form action="/profile/editProfile/<%- user.id %>?_method=PUT" enctype="multipart/form-data" method="post">
+            <div class="edit-profile">
+                <div class="user">
+                    
+                    <img class="picture" src="<%- user.image %>" alt= "" >
+                    <input type="file" name="userFile" />
+                    
                 </div>
-                <div class="description">¡Cuentanos más sobre ti!
-                    <textarea class= "life" type="text" name="about" required placeholder="Todo nómada tiene una historia detrás, ¿Cúal es la tuya?"></textarea>
-                </div>
-            </div>
-        </div>
-        <button class="edit save"><p>Guardar</p></button>
+                
+                    <input type="hidden" name="_method" value="PUT">
+                        <div class="personal-info">
+                                <div class="first name"><%- user.name %></div>
+                                <div class="first email"><%- user.email %></div>  
+                                <div class="age">Edad:
+                                    <input class= "ages" type="number" name="age" value ="<%- user.age %>" required placeholder="Opcional">
+                                </div>
+                                <div class="description">¡Cuentanos más sobre ti!
+                                    <textarea class= "life" type="text" name="comment" required placeholder="Todo nómada tiene una historia detrás, ¿Cúal es la tuya?"><%= user.comment %></textarea>
+                                </div>
+                        </div>
         
+            </div>
+            <button class="edit save"><p>Guardar</p></button>
+        </form>  
+
         <footer class="footer">
             <div class="info">
                 <a  href="" class="contacto">Contacto</a>

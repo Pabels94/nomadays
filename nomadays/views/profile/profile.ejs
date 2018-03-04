@@ -35,15 +35,21 @@
             <div class="profileInfo">
                     <div class="user">
                         <img class="picture" src="/img/login/profile.png" alt= "" >
-                        <button class="edit"><p>Edita tu perfil</p></button>
+                        <a class="edit" href="/profile/editProfile/<%- locals.user.id %>">Edita tu perfil</a>
                     </div>
                     <div class="aboutMe">
-                        <div class="name">Pablo Hermoso</div>
-                        <div class="email">pablohermosog@gmail.com</div>
-                        <button class="add"><p>¿A qué esperas? Completa tu perfil</p></button>
+                        <% if (locals.user) { %>
+                            <div class="name"><%= locals.user.name %></div>
+                            <div class="email"><%= locals.user.email %></div>
+                            <% if (locals.user.comment) { %>
+                                <button class="add"><p><%= locals.user.comment %></p></button>
+                            <% } else { %>    
+                                <button class="add"><p>¿A qué esperas? Completa tu perfil</p></button>
+                            <% } %>
+                        <% } %>    
                     </div>
                 </div>
-                    <p class="hobbies">"Me considero una persona aventurera, que está en constante busqueda de nuevas experiencias alejadas del turismo, donde poder ser yo mismo, conocer nuevas culturas y recorrer el mundo con lo básico, solos mi cámara y yo"</p>
+                <p class="hobbies">"Me considero una persona aventurera, que está en constante busqueda de nuevas experiencias alejadas del turismo, donde poder ser yo mismo, conocer nuevas culturas y recorrer el mundo con lo básico, solos mi cámara y yo"</p>
         </header>
         <div class="tittle">MIS VIAJES</div>
         <div class="myTrips">
