@@ -23,6 +23,10 @@ const storage = multer.diskStorage({
   },
 });
 
+const upload = multer({
+  storage,
+});
+
 
 router.get('/addPlace', ensureAuthenticated, (req, res, next) => {
   res.render('profile/addPlace');
@@ -30,6 +34,7 @@ router.get('/addPlace', ensureAuthenticated, (req, res, next) => {
 
 router.post('/addPlace', ensureAuthenticated, (req, res, next) => {
   const place = req.body;
+  place.userId = req.user.id;
   Place.create(place)
     .then((value) => {
       res.status(200);
@@ -56,10 +61,14 @@ router.get('/editPlace/:id', ensureAuthenticated, (req, res, next) => {
 // Quitamos temporalmente la comprobación de login para poder trabajar más ágilmente
 router.get('/', (req, res, next) => {
   // res.render('profile/profile', { trips });
-  Trip.find({})
+  Trip.find({
+    userId: req.user.id,
+  })
     .sort({ dateInitial: 'asc' })
     .then((trips) => {
-      Place.find({})
+      Place.find({
+        userId: req.user.id,
+      })
         .sort({ name: 'asc' })
         .then((places) => {
           res.render('profile/profile', { trips,
@@ -102,7 +111,6 @@ router.post('/addTrip', ensureAuthenticated, (req, res, next) => {
       destinationCity: req.body.destinationCity,
       dateInitial: req.body.dateInitial,
       dateEnd: req.body.dateEnd,
-
     });
   } else {
     const newTrip = {
@@ -110,8 +118,7 @@ router.post('/addTrip', ensureAuthenticated, (req, res, next) => {
       destinationCity: req.body.destinationCity,
       dateInitial: new Date(req.body.dateInitial),
       dateEnd: new Date(req.body.dateEnd),
-
-      userId: '5a898fff6bad38205ccf19a1',
+      userId: req.user.id,
     };
     Trip.create(newTrip)
       .then((trip) => {
@@ -176,11 +183,8 @@ router.get('/editProfile/:id', (req, res, next) => {
 });
 
 
-router.put('/editProfile/:id', (req, res, next) => {
-  const upload = multer({
-    storage,
-  }).single('userFile');
-  upload(req, res, (err) => {
+router.put('/editProfile/:id', upload.single('userFile'), (req, res, next) => {
+  if (req.file !== undefined) {
     console.log(req.file);
     User.findOne({
       _id: req.params.id,
@@ -190,28 +194,36 @@ router.put('/editProfile/:id', (req, res, next) => {
       user.image = req.file.destination.replace('./public', '') + req.file.filename;
       user.save()
         .then((user) => {
+          res.redirect('/profile');
           console.log('file uploaded');
         });
     });
-  });
-});
-
-// subir foto del perfil
-router.put('/uploadFile/:id', (req, res, next) => {
-  const upload = multer({
-    storage,
-  }).single('userFile');
-  upload(req, res, (err) => {
+  } else {
     console.log(req.file);
     User.findOne({
       _id: req.params.id,
     }).then((user) => {
-      user.image = upload;
+      user.age = req.body.age;
+      user.comment = req.body.comment;
       user.save()
         .then((user) => {
-          console.log('file uploaded');
+          res.redirect('/profile');
         });
     });
+  }
+});
+
+
+// subir foto del perfil
+router.put('/uploadFile/:id', upload.single('userFile'), (req, res, next) => {
+  User.findOne({
+    _id: req.params.id,
+  }).then((user) => {
+    user.image = req.file.destination.replace('./public', '') + req.file.filename;
+    user.save()
+      .then((user) => {
+        console.log('file uploaded');
+      });
   });
 });
 
