@@ -1,0 +1,41 @@
+html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+  }
+
+*{
+    text-decoration: none !important;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+  }
+
+  body{
+      margin:none;
+      padding: none;
+      background: url("/img/login/gradient.jpg")
+  }
+
+  .card-body{
+      margin: 100px 80px;
+  }
+
+  label{
+      font-weight: 500;
+      color: rgba(158, 84, 226, 1);
+  }
+
+  h3{
+      margin-bottom:20px;
+  }
+
+  .btn-primary{
+      background-color: blueviolet;
+      border-color: blueviolet;
+  }
+
+  .btn-primary:hover{
+    background-color: white;
+    border:1.5px solid blueviolet;
+    color:blueviolet;
+}

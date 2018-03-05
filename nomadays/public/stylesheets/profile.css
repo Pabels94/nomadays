@@ -95,15 +95,15 @@ html {
         }
 
         .name{
-            margin-left: 20px;
+            margin-left: 40px;
         }
 
         .email{
-            margin-left: 20px;
+            margin-left: 40px;
         }
 
         .age{
-            margin-left: 20px;
+            margin-left: 40px;
         }
 
         .profileInfo{
@@ -147,7 +147,8 @@ html {
         
         .picture{
             width: 100%;
-            margin:0;
+            margin-bottom:20px;
+            border-radius: 50%;
         }
         
         .edit{
