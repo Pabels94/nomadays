@@ -130,13 +130,11 @@ html {
             display: flex;
             flex-flow: column nowrap;
             padding: 0;
-            margin-top: 25px;
             margin-left: 80px;
             width: 1700px;
             
         }
             .file .info .first{
-                margin-bottom: 25px;
                 left: 50px;
                 font-size: 120%;
                 font-weight: 500;
@@ -147,12 +145,14 @@ html {
                 font-weight: 150%;
             }
 
+    
+
     .description{
         margin: 30px 20px 0 0; 
         display: flex;
         flex-flow: column nowrap;
     } 
-        .description .tittle{
+         .tittle{
             font-size: 120%;
             font-weight: 500;
             color: rgba(158, 84, 226, 1);

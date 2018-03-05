@@ -40,17 +40,18 @@
                     </ul>
             </div>
             <div class="info">
-            
+                <h3 class="tittle">Lugar</h3>
                 <div class="first name"><%- place.name %></div>
                 <script>
                     var latitude = JSON.parse('<%- place.location.coordinates[1] %>');
                     var longitude = JSON.parse('<%- place.location.coordinates[0] %>');        
                 </script>
+                <div class="description">
+                        <h3 class="tittle">Descripción</h3>
+                        <p><%- place.description %></p>
+                </div>
             </div>
-            <div class="description">
-                    <h3 class="tittle">Descripción</h3>
-                    <p><%- place.description %></p>
-            </div>
+            
         
                     
         </div>

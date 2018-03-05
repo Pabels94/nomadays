@@ -28,14 +28,14 @@
                 <div class="user">
                     
                     <img class="picture" src="<%- user.image %>" alt= "" >
-                    <input type="file" name="userFile" />
+                    <input class="down" type="file" name="userFile" />
                     
                 </div>
                 
                     <input type="hidden" name="_method" value="PUT">
                         <div class="personal-info">
-                                <div class="first name"><%- user.name %></div>
-                                <div class="first email"><%- user.email %></div>  
+                                <div class="first name">Nómada: <%- user.name %></div>
+                                <div class="first email">Correo: <%- user.email %></div>  
                                 <div class="age">Edad:
                                     <input class= "ages" type="number" name="age" value ="<%- user.age %>" required placeholder="Opcional">
                                 </div>

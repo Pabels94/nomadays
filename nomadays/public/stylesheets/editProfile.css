@@ -101,14 +101,13 @@ html {
             margin-top: 30px;
         }
 
-        /* img{
-            border-top-left-radius: 50% 50%;
-            border-top-right-radius: 50% 50%;
-            border-bottom-right-radius: 50% 50%;
-            border-bottom-left-radius: 50% 50%;
-        } */
+        .down{
+            display: flex;
+            width: 170px;
+            margin-top: 20px;
+            height: auto;
+        }
 
-        
 
         input:focus{
             outline: none;
@@ -146,6 +145,7 @@ html {
         .picture{
             width: 72%;
             margin:0;
+            border-radius: 50%;
         }
 
         .age{
@@ -169,8 +169,7 @@ html {
             border-style: none;
             color: #fff;
             background: #00D76D;
-            border: 2px solid #00D76D;
-            
+            border: 2px solid #00D76D;  
         }
         
         .edit p{

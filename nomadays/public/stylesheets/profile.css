@@ -94,6 +94,18 @@ html {
             align-items: center;
         }
 
+        .name{
+            margin-left: 20px;
+        }
+
+        .email{
+            margin-left: 20px;
+        }
+
+        .age{
+            margin-left: 20px;
+        }
+
         .profileInfo{
             display: flex;
             flex-flow: row nowrap;
@@ -120,21 +132,21 @@ html {
         .add{
             border: none;
             padding: 0;
+            margin:90px 290px 90px 0
         }
         
         .add p{
             display: flex;
             border: none;
-            font-weight: 400;
-            color: #00D76D;
+            font-size: 100%;
+            font-weight: 300;
+            margin-top: 80px;
+            line-height: 2;
         }
-        
-        .add p:hover{
-            color: rgb(158, 84, 226); 
-        }
+    
         
         .picture{
-            width: 72%;
+            width: 100%;
             margin:0;
         }
         
@@ -170,7 +182,11 @@ html {
             font-weight: 500 !important;
         }
 
-
+        .rectangle{
+            width: 100%;
+            height: 60px;
+            background-color: #333;
+        }
         
         .hobbies{
         
@@ -183,11 +199,20 @@ html {
         flex-flow: row wrap;
         align-content: center;
         justify-content: center;
-        font-weight: 600;
+        
         font-size: 22px;
-        color: rgb(53, 53, 53);
+        color: rgb(255, 255, 255);
         margin-bottom: 60px;
+        width: 100%;
+        height: 60px;
+        background:url("/img/login/gradient.jpg"); 
     }
+        .tittle p{
+            margin-top: 15px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            word-spacing: 6px;
+        }
 
     .myTrips{
         display: flex;
@@ -204,6 +229,10 @@ html {
 
     .place{
         margin: 0 3%;
+    }
+
+    .place-delete{
+        margin:0px;
     }
 
     .trip{
@@ -405,8 +434,7 @@ html {
         border: 1.5px solid rgb(226, 84, 84);
         color: rgb(226, 84, 84);
         background: #fff;
-        border: 1.5px solid rgb(226, 84, 84);
-        margin: 0 0 20px 47%;
+        margin: 0 0 20px 0;
     }
 
     .action{
@@ -433,7 +461,7 @@ html {
         color: rgb(158, 84, 226);
         background: #fff;
         border: 1.5px solid rgb(158, 84, 226);
-        margin: 0 0 20px 47%;
+        margin: 0 0 20px 0;
     }
 
     .show:hover{

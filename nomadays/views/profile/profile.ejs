@@ -26,21 +26,22 @@
                     <% } %>    
                     
                 </div>
-                <div class="hamburguesa">
+                <!-- <div class="hamburguesa">
                     <a href="index.html">
                         <img src="/img/login/hamburguer-menu-black.png" alt= "" >
                     </a>
-                </div>
+                </div> -->
             </div>
             <div class="profileInfo">
                     <div class="user">
                         <img class="picture" src="/img/login/profile.png" alt= "" >
-                        <a class="edit" href="/profile/editProfile/<%- locals.user.id %>">Edita tu perfil</a>
+                        <a class="edit" href="/profile/editProfile/<%- locals.user.id %>">Editar perfil</a>
                     </div>
                     <div class="aboutMe">
                         <% if (locals.user) { %>
                             <div class="name"><%= locals.user.name %></div>
                             <div class="email"><%= locals.user.email %></div>
+                            <div class="age">edad: <%= locals.user.age %> años</div>
                             <% if (locals.user.comment) { %>
                                 <button class="add"><p><%= locals.user.comment %></p></button>
                             <% } else { %>    
@@ -49,9 +50,9 @@
                         <% } %>    
                     </div>
                 </div>
-                <p class="hobbies">"Me considero una persona aventurera, que está en constante busqueda de nuevas experiencias alejadas del turismo, donde poder ser yo mismo, conocer nuevas culturas y recorrer el mundo con lo básico, solos mi cámara y yo"</p>
         </header>
-        <div class="tittle">MIS VIAJES</div>
+        <div class="tittle">
+            <p>MIS VIAJES</p> </div>
         <div class="myTrips">
             <% if (typeof(trips) != 'undefined') { %>
                     <div class="trip">
@@ -107,7 +108,8 @@
     
         
     
-        <div class="tittle">MIS LUGARES</div>
+        <div class="tittle">
+                <p>MIS LUGARES</p></div>
     
         <div class="myPlaces">
         <% if (typeof(trips) != 'undefined') { %>
@@ -137,7 +139,7 @@
                     <% }); %>
             </div>
 
-            <div class="place">
+            <div class="place-delete">
                 <div class="field second"></div>
                 <% places.forEach(function(place) { %>
                     <form method="post" action="/profile/deletePlace/<%- place.id %>?_method=DELETE">
