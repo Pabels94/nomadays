@@ -16,6 +16,7 @@
               <h5 class="card-title">Lugar</h5>
               <form id="geocode">
                 <input id="address" type="" name="address" placeholder="dirección">
+                <input class="style" id="styleAddress" type="text" name="style" placeholder="estilo">
                 <input class= "search" type="submit" name="Buscar" value="Buscar">
               </form>
             </div>
@@ -83,6 +84,7 @@
         const restInfo = {
           name: $('#address').val(),
           description: $('#description').val(),
+          style: $('#styleAddress').val(),
           location: {
             type: 'Point',
             coordinates: [longitude, latitude]

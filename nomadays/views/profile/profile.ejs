@@ -34,7 +34,7 @@
             </div>
             <div class="profileInfo">
                     <div class="user">
-                        <img class="picture" src="/img/login/profile.png" alt= "" >
+                        <img class="picture" src="<%- locals.user.image %>" alt= "" >
                         <a class="edit" href="/profile/editProfile/<%- locals.user.id %>">Editar perfil</a>
                     </div>
                     <div class="aboutMe">
@@ -120,18 +120,18 @@
                 <% }); %>
             </div>
             <div class="place">
-                <div class="field">Latitud</div>
+                <div class="field">Estilo</div>
                 <% places.forEach(function(place) { %>
-                    <div class="Coordinates first"><%- place.location.coordinates[0] %></div>                
+                    <div class="Coordinates first"><%- place.style %></div>                
                 <% }); %>            
             </div>
-            <div class="place">
+            <!-- <div class="place">
                 <div class="field">Longitud</div>
                 <% places.forEach(function(place) { %>
                     <div class="Coordinates first"><%- place.location.coordinates[1] %></div>
                 <% }); %>
             </div>
-    
+     -->
             <div class="place">
                     <div class="field second"></div>
                     <% places.forEach(function(place) { %>

@@ -145,10 +145,16 @@ html {
                 font-weight: 150%;
             }
 
-    
+    .style{
+        margin-top: 30px;
+    }
 
+    .style p{
+        font-size: 120%;
+        line-height: 32px;
+    }
     .description{
-        margin: 30px 20px 0 0; 
+        margin: 0px 20px 0 0; 
         display: flex;
         flex-flow: column nowrap;
     } 

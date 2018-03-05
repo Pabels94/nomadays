@@ -3,11 +3,8 @@ const Schema = mongoose.Schema;
 
 const PlaceSchema = new Schema({
   name: String,
+  style: String,
   description: String,
-  locationType: {
-    type: String,
-    enum: ['Bar', 'Restaurante', 'Hotel', 'Monumento', 'Museo', 'Otros'],
-  },
   location: {
     type: {
       type: String,
